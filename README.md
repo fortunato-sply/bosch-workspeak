@@ -1,6 +1,6 @@
 # bosch-workspeak
 
-(Model of Pages - FIGMA)[https://www.figma.com/file/Q3zrC53deguuMaHlHmmcXC/Bosch-WorkSpeak?node-id=0%3A1&t=P01mX5CttPVZG0Mh-1]
+[Model of Pages - FIGMA](https://www.figma.com/file/Q3zrC53deguuMaHlHmmcXC/Bosch-WorkSpeak?node-id=0%3A1&t=P01mX5CttPVZG0Mh-1)
 ---
 ## Pages 
 1. Sign In
