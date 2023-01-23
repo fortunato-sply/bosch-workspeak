@@ -1,5 +1,5 @@
 # bosch-workspeak
-##**A short description**
+## **A short description**
 Bosch WorkSpeak is a great platform of social media to get some info about the other and your own sector. Your can now share your achievements and show some of your skills our new "*WorkSpeak*"
 ---
 [Model of Pages - FIGMA](https://www.figma.com/file/Q3zrC53deguuMaHlHmmcXC/Bosch-WorkSpeak?node-id=0%3A1&t=P01mX5CttPVZG0Mh-1)
