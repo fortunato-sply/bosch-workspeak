@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
+:root {
+  --white: #fff;
+
+  --gray-100: #e1e1e6;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #323238;
+  --gray-700: #29292e;
+  --gray-800: #202024;
+  --gray-900: #121214;
+
+  --green-300: #00b37e;
+  --green-500: #00875f;
+
+  --red-500: #f75a68;
+  --red-600: #D40000;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--gray-900);
+}
+
+header {
+  width: 100vw;
+  background-color: var(--gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+}
+
+header img {
+  width: 100px;
+  background-color: transparent;
+}
+
+main {
+  width: 60vw;
+  margin-top: 2vh;
+  min-height: 93vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-container {
+  background-color: var(--gray-700);
+  width: 33%;
+  height: 35vh;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feed-container {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* PROFILE */
+
+.background {
+  
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.background img {
+  padding: 8px;
+  position: fixed;
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: var(--gray-400);
+  border-radius: 8px;
+  border: 1px var(--red-600) solid;
+}
+
+.role {
+  width: 100%;
+  text-align: center;
+  margin-top: 18%;
+  color: var(--white);
+}
+
+.role strong {
+  font-size: 1.475rem;
+  letter-spacing: 1px;
+}
+
+.role p {
+  font-weight: 400;
+}
+
+.edit-btn {
+  margin-top: 10%;
+  color: var(--red-600);
+  background-color: transparent;
+  padding: 8px 16px;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  border: 2px solid var(--red-600);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.edit-btn:hover {
+  color: var(--white);
+  background-color: var(--red-600);
+}
+
+/* POST */
+.post {
+  width: 100%;
+  background-color: var(--gray-700);
+  min-height: 50vh;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 4%;
+  color: var(--white);
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: var(--gray-400);
+}
+
+.user {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.name strong {
+  font-size: 1.475rem;
+  letter-spacing: 1px;
+}
+
+.name p {
+  font-size: 0.875rem;
+  color: var(--gray-300);
+}
+
+.timer h3 {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--gray-300);
+}
+
+.content  {
+  margin-top: 5%;
+  height: 30%;
+  text-overflow: ellipsis;
+  overflow-y: scroll;
+  padding: 12px;
+  text-align: justify;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--gray-800);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--gray-600);    /* color of the scroll thumb */
+}
+
+.afterline {
+  align-self: center;
+  margin-top: 1em;
+  width: 96%;
+  height: 2px;
+  background-color: var(--red-600);
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  margin-top: 0.5em;
+}
+
+.comment-box form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.25em;
+}
+
+.comment-box textarea {
+  background-color: var(--gray-900);
+  border: 0;
+  padding: 12px;
+  border-radius: 12px;
+  color: var(--white);
+  text-overflow: ellipsis;
+  overflow-y: scroll;
+  resize: none;
+  height: 100px;
+  font-weight: 400;
+  transition: all .5s;
+}
+
+.comment-box textarea:focus {
+  outline: none;
+}
+
+.comment-box textarea:hover {
+  filter: brightness(1.2);
+}
+
+.comment-box span {
+  font-weight: bold;
+}
+
+.submit-btn {
+  width: fit-content;
+  padding: 8px 16px;
+  margin-top: 1em;
+  border-radius: 6px;
+  font-size: 1rem;
+  border: 0;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--white);
+  background-color: var(--red-600);
+
+  transition: .3s;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.2);
+}
