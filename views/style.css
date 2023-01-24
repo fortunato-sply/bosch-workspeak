@@ -52,6 +52,7 @@ main {
   min-height: 93vh;
   display: flex;
   justify-content: space-between;
+  transition: .8s;
 }
 
 .profile-container {
@@ -79,13 +80,12 @@ main {
   height: 25%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: unset;
 }
 
 .background img {
   padding: 8px;
-  position: fixed;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 100px;
   height: 100px;
   background-color: var(--gray-400);
@@ -134,7 +134,7 @@ main {
 .post {
   width: 100%;
   background-color: var(--gray-700);
-  min-height: 50vh;
+  min-height: 45vh;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -225,7 +225,7 @@ textarea::-webkit-scrollbar-thumb {
   margin-top: 1.25em;
 }
 
-.comment-box textarea {
+textarea {
   background-color: var(--gray-900);
   border: 0;
   padding: 12px;
@@ -239,11 +239,11 @@ textarea::-webkit-scrollbar-thumb {
   transition: all .5s;
 }
 
-.comment-box textarea:focus {
+textarea:focus {
   outline: none;
 }
 
-.comment-box textarea:hover {
+textarea:hover {
   filter: brightness(1.2);
 }
 
@@ -268,4 +268,40 @@ textarea::-webkit-scrollbar-thumb {
 
 .submit-btn:hover {
   filter: brightness(1.2);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.new-post-btn {
+  position: fixed;
+  padding: 12px;
+  margin: 12px;
+  bottom: 2vh;
+  right: 19.45vw;
+  color: var(--white);
+  font-size: 1.9rem;
+  text-align: center;
+  background-color: var(--red-600);
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  transition: .3s;
+}
+
+.new-post-btn:hover {
+  font-size: 2.2rem;
+  animation: rotate 2s ease-in-out;
+  animation-delay: 50ms;
 }
