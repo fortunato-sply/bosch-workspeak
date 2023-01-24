@@ -1,0 +1,49 @@
+BOSCH WORKSPEAK
+Web App utilizado como uma rede social interna, substituindo o Workplace (Meta)
+Os posts são separadas por grupos (setores)
+
+ENTIDADES
+Usuário - EDV, senha, nome, foto de perfil, cargo, setor (Login e Cadastro, editar informações)
+
+-- interações do user:
+post: pode postar publicações
+comment: pode comentar nas publicações
+like: curtir as publicações
+
+TELAS/VIEWS
+LOGIN/CADASTRO
+PAGINA PESSOAL
+FEED (começa carregando no geral, tem um filtro para escolher o setor)
+PUBLICAR POST (opção de ser visto em geral ou apenas no próprio setor)
+VIEW PROFILE (others) (quando o usuário clica na picture de outro, consegue visualizar foto, nome, cargo, setor, outras redes, etc)
+EDIT PROFILE (self)
+
+OBJECTS
+User {
+	ID: int PK AI,
+	EDV: int,
+	Name: varchar(50),
+	Password: varchar(50),
+	Role: varchar(20),
+	Sector: int FK(Sector) not null,
+	Picture: varchar(100),
+	Linkedin: varchar(100) 
+},
+Sector {
+	ID: int PK AI,
+	Name: VARCHAR(50)
+},
+Post {
+	ID: int PK AI,
+	UserID: int FK(User) not null,
+	SectorID: int FK(Group) not null,
+	General: boolean,
+	Title: varchar(30),
+	Content: varchar(500)
+},
+Comment {
+	ID: int PK AI,
+	PostID: int FK(Post) not null,
+	UserID: int FK(User) not null,
+	Content: varchar(300)
+}
