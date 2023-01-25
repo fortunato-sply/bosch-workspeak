@@ -9,7 +9,7 @@
 - [Pages](#pages)
 - [How to Run](#how-to-run)
 - [Project Classes](#project-classes)
-- [Developers](#participantes)
+- [Developers](#developers)
 
 ## **A short description**
 Bosch WorkSpeak is a great platform of social media to get some info about the other and your own sector. Your can now share your achievements and show some of your skills our new "*WorkSpeak*"
