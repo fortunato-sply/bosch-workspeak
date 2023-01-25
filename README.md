@@ -18,6 +18,10 @@ Bosch WorkSpeak is a great platform of social media to get some info about the o
 [Model of Pages - FIGMA](https://www.figma.com/file/Q3zrC53deguuMaHlHmmcXC/Bosch-WorkSpeak?node-id=0%3A1&t=P01mX5CttPVZG0Mh-1)
 ---
 
+---
+[Diagram Entity-Relationship](https://miro.com/app/board/uXjVPuFTcU4=/?share_link_id=541181876781)
+---
+
 ## Pages 
 1. Sign In
 2. Log In
