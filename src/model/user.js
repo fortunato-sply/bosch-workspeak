@@ -23,15 +23,15 @@ Password: {
 },
 Role: {
     type: Sequelize.STRING(20),
-    allowNull: false
+    allowNull: true
 },
 Picture: {
     type: Sequelize.STRING(100),
-    allowNull: false
+    allowNull: true
 },
 Linkedin: {
     type: Sequelize.STRING(100),
-    allowNull: false
+    allowNull: true
 }
 });
 user.belongsTo(sector, {

@@ -1,7 +1,6 @@
 const sequelize = require('sequelize');
 
-//configurações da base de dados
-const database = new sequelize('projetoJS', 'AulaJS', 'J@SqL0123_QWE',
+const database = new sequelize('workSpeak', 'Project', 'etsds10243110',
 {
     dialect: 'mssql', host:'localhost', port: 1433
 });

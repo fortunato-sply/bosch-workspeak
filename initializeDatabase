@@ -1,0 +1,20 @@
+use workSpeak
+
+Create TABLE Sector(
+    IDSector int not null primary key identity(1,1),
+    Name VARCHAR(50) not null,
+);
+
+
+INSERT INTO Sector values('ETS');
+INSERT INTO Sector values('Engenharia');
+INSERT INTO Sector values('Limpeza');
+INSERT INTO Sector values('Produção');
+INSERT INTO Sector values('Logistica');
+INSERT INTO Sector values('Segurança');
+
+//Se precisar :)
+delete from Sector
+drop table Sector
+
+Select * from Sector
