@@ -6,10 +6,11 @@
   height: 55vh;
   background-color: var(--gray-800);
   border-radius: 12px;
-  animation: easeModal 0.8s;
+  animation: easeModal .8s;
   padding: 48px;
   align-items: center;
   justify-content: center;
+  transition: .3s;
 }
 
 .hidden {
@@ -25,11 +26,13 @@
 }
 
 @keyframes easeModal {
-  0% {
-    transform: translate(-40%, -35%);
+  from {
+    transform: translate(50%, 50%);
+    scale: 0;
   }
-  100% {
+  to {
     transform: translate(-50%, -50%);
+    scale: 1;
   }
 }
 
@@ -74,6 +77,7 @@ label {
   align-items: center;
   margin-bottom: 10px;
   gap: 12px;
+  cursor: pointer;
 }
 
 .radio-btn {

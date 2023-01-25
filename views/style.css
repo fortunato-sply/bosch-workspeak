@@ -121,8 +121,8 @@ main {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-
   transition: .3s;
+  text-decoration: none;
 }
 
 .edit-btn:hover {

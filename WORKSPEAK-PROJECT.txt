@@ -4,6 +4,7 @@ Os posts são separadas por grupos (setores)
 
 ENTIDADES
 Usuário - EDV, senha, nome, foto de perfil, cargo, setor (Login e Cadastro, editar informações)
+Setor, Post, Comment
 
 -- interações do user:
 post: pode postar publicações
@@ -38,7 +39,6 @@ Post {
 	UserID: int FK(User) not null,
 	SectorID: int FK(Group) not null,
 	General: boolean,
-	Title: varchar(30),
 	Content: varchar(500)
 },
 Comment {

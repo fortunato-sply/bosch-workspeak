@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <title>BOSCH Workspeak</title>
+  </head>
+<body>
+  <section class="login-box">
+    <div class="login show" id="login">
+      <h1>Login</h1>
+      <form action="" class="form">
+        <div class="fieldset">
+          <label for="edv">EDV</label>
+          <input type="text" name="edv" id="edv" required>
+        </div>
+        <div class="fieldset">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required>
+        </div>
+        <button type="submit" class="submit-btn">Continue</button>
+      </form>
+      <span class="signup-btn" onclick="switchForms()">New here? <p>Create an account</p></span>
+      <a href="#">Forgot your password?</a>
+    </div>
+    <div class="signup hidden" id="signup">
+      <h1>Sign up</h1>
+      <form action="" class="form">
+        <div class="fieldset">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="fieldset">
+          <label for="edv-s">EDV</label>
+          <input type="text" name="edv-s" id="edv-s" required>
+        </div>
+        <div class="fieldset">
+          <label for="password-s">Password</label>
+          <input type="password" name="password-s" id="password-s" required>
+        </div>
+        <div class="fieldset">
+          <select name="sector" id="sector" required>
+            <option value="0" selected disabled>Select the sector</option>
+            <option value="1">ETS</option>
+            <option value="2">CRIM</option>
+            <option value="3">TEF</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Continue</button>
+      </form>
+      <span class="signup-btn" onclick="switchForms()">Back to login</span>
+    </div>
+    <div class="picture">
+      <img src="bosch.png" alt="">
+    </div>
+  </section>
+  <script src="login.js"></script>
+</body>
+</html>
