@@ -1,4 +1,8 @@
-# bosch-workspeak
+<p align="center">
+  <img alt="rifa" src="/public/img/bosch.png" width="100px" />
+  <h1 align="center">Bosch WorkSpeak</h1>
+</p>
+
 ## **A short description**
 Bosch WorkSpeak is a great platform of social media to get some info about the other and your own sector. Your can now share your achievements and show some of your skills our new "*WorkSpeak*"
 ---
