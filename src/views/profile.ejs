@@ -1,22 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/phosphor-icons"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="profile.css">
-  <title>BOSCH Workspeak</title>
+<%- include("parts/header") %> 
+  <link rel="stylesheet" href="css/profile.css">
+  <title>WorkSpeak | Profile</title>
 </head>
 <body>
   <header>
-    <img src="bosch.png" alt="BOSCH">
+    <img src="img/bosch.png" alt="BOSCH">
   </header>
-  <section class="profile-container">
+  <form class="profile-container" id="main" action="/save" method="post" enctype="multipart/form-data">
     <div class="img-container">
-      <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg" alt="">
+      <div id="divimg" class="imagem" onmouseenter="hoverImg()" onmouseleave="hoverImg()">
+        <img id='img' src="<%= "img/" + getUser.Picture %>" alt="">
+        <input type="file" id="flImage" name="attfoto" accept="image/*">
+        <div class="hover-img" id="hoverimg">
+          <i class="ph-camera"></i>
+        </div>
+      </div>
+      <button id="changebtn" class="change-btn" onclick="openPasswordModal()">Change password</button>
     </div>
-  </section>
-</body>
-</html>
+    <div class="content">
+      <div class="content-form">
+        <div class="field-container">
+          <div class="fieldset">
+            <p>Name</p>
+            <input type="text" name="name" id="name" value="<%= getUser.Name %>" required>
+          </div>
+          <div class="fieldset">
+            <p>Role</p>
+            <input type="text" name="role" id="role" required value=<% if(getUser.Role === null){ %>
+                                                                    <%= "Default" %>
+                                                                  <% } else{ %>
+                                                                    <%= getUser.Role %>
+                                                                  <% } %>>
+          </div>
+          <div class="fieldset">
+            <p>Sector</p>
+            <select name="sector" id="sector" required>
+              <% for(let i = 0; i < sectors.length; i++) {%> 
+                <option value="<%= sectors[i].IDSector %>" <% if(sectors[i].IDSector == sect.IDSector) { %>
+                  <%= "selected" %> 
+                <% } %> ><%= sectors[i].Name %></option>
+              <% } %>
+            </select>
+          </div>
+        </div>
+        <div class="btn-container">
+          <a href="/home" class="submit-btn cancel-btn">Cancel</a>
+          <button type="submit" class="submit-btn">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="changepassword-modal hidden" id="passwordModal">
+    <form action="/changePassword" method="post">
+      <div class="field-container">
+        <div class="fieldset">
+          <p>Old password</p>
+          <input type="text" name="oldpassword" id="oldpassword">
+        </div>
+        <div class="fieldset">
+          <p>New password</p>
+          <input type="text" name="newpassword" id="newpassword">
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Change</button>
+    </form>
+  </div>
+  <script src="js/profile.js"></script>
+  <script src="js/editphoto.js"></script>
+  <script src="js/passwordModal.js"></script>
+<%- include("parts/footer") %>
