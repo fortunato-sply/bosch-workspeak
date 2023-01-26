@@ -5,7 +5,7 @@ const sector = require('./sector');
 
 const post = database.define('Post', {
     IDPost: {
-    type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true

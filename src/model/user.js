@@ -23,20 +23,17 @@ Password: {
 },
 Role: {
     type: Sequelize.STRING(20),
-    allowNull: false
+    allowNull: true
 },
 Picture: {
     type: Sequelize.STRING(100),
-    allowNull: false
+    allowNull: true
 },
-Linkedin: {
-    type: Sequelize.STRING(100),
-    allowNull: false
-}
 });
 user.belongsTo(sector, {
-    constraint: true, //Garantir integridade referencial
-    foreignKey: 'IDSector'
+    constraint: true,
+    foreignKey: 'IDSector',
+    allowNull: false,
 });
 
 module.exports = user;

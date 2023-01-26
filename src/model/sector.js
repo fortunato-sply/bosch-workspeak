@@ -8,7 +8,7 @@ const sector = database.define('Sector', {
         allowNull: false,
         primaryKey: true
     },
-    Nome: {
+    Name: {
         type: Sequelize.STRING(50),
         allowNull: false
     },
