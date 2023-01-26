@@ -1,0 +1,27 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  height: 80vh;
+  background-color: var(--gray-700);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-container {
+  background: url(https://img5.goodfon.com/wallpaper/nbig/5/56/color-texture-bosch-colorful.jpg);
+  width: 100%;
+  height: 20%;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.img-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 99px;
+  margin-top: 7%;
+}

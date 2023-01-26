@@ -29,14 +29,11 @@ Picture: {
     type: Sequelize.STRING(100),
     allowNull: true
 },
-Linkedin: {
-    type: Sequelize.STRING(100),
-    allowNull: true
-}
 });
 user.belongsTo(sector, {
-    constraint: true, //Garantir integridade referencial
-    foreignKey: 'IDSector'
+    constraint: true,
+    foreignKey: 'IDSector',
+    allowNull: false,
 });
 
 module.exports = user;

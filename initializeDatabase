@@ -1,20 +1,19 @@
 use workSpeak
 
-Create TABLE Sector(
+Create TABLE Sectors(
     IDSector int not null primary key identity(1,1),
     Name VARCHAR(50) not null,
 );
 
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('ETS', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('Engenharia', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('Limpeza', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('Produção', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('Produção', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('Segurança', GETDATE(), GETDATE());
 
-INSERT INTO Sector values('ETS');
-INSERT INTO Sector values('Engenharia');
-INSERT INTO Sector values('Limpeza');
-INSERT INTO Sector values('Produção');
-INSERT INTO Sector values('Logistica');
-INSERT INTO Sector values('Segurança');
+-- Se precisar :) --
+delete from Sectors
+drop table Sectors
 
-//Se precisar :)
-delete from Sector
-drop table Sector
-
-Select * from Sector
+Select * from Sectors

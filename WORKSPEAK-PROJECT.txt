@@ -27,7 +27,6 @@ User {
 	Role: varchar(20),
 	Sector: int FK(Sector) not null,
 	Picture: varchar(100),
-	Linkedin: varchar(100) 
 },
 Sector {
 	ID: int PK AI,
