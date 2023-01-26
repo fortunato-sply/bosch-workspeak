@@ -146,6 +146,7 @@ input[type='file']{
   background-color: transparent;
   border: 1px solid var(--red-600);
   color: var(--red-600);
+  text-decoration: none;
 }
 
 .cancel-btn:hover {

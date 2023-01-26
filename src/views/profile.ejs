@@ -9,7 +9,12 @@
   <form class="profile-container" id="main" action="/save" method="post" enctype="multipart/form-data">
     <div class="img-container">
       <div id="divimg" class="imagem" onmouseenter="hoverImg()" onmouseleave="hoverImg()">
-        <img id='img' src="<%= "img/" + getUser.Picture %>" alt="">
+        <img id='img' src=<% if(getUser.Picture === null){ %>
+            <%= "img/user.png"  %>  
+          <% } else{ %> 
+            <%= "img/" + getUser.Picture %> 
+          <% } %>
+          alt="">  
         <input type="file" id="flImage" name="attfoto" accept="image/*">
         <div class="hover-img" id="hoverimg">
           <i class="ph-camera"></i>
