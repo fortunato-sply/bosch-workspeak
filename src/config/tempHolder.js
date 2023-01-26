@@ -1,15 +1,9 @@
-const user = null;
-
-function logUser(newUser){
-    user = newUser;
+var Store = module.exports = {
+    user: null,
+    login: function(newUser) {
+        Store.user = newUser;
+    },
+    logout: function() {
+        Store.user = null;
+    }
 }
-
-function logOff(){
-    user = null;
-}
-
-function getUser(){
-    return user;
-}
-
-module.exports = temp;
