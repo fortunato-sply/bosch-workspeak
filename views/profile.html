@@ -13,10 +13,61 @@
   <header>
     <img src="bosch.png" alt="BOSCH">
   </header>
-  <section class="profile-container">
+  <section class="profile-container" id="main">
     <div class="img-container">
-      <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg" alt="">
+      <div id="divimg" class="imagem" onmouseenter="hoverImg()" onmouseleave="hoverImg()">
+        <img id='img' src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg" alt="">
+        <input type="file" id="flImage" name="attfoto" accept="image/*">
+        <div class="hover-img" id="hoverimg">
+          <i class="ph-camera"></i>
+        </div>
+      </div>
+      <button type="submit" class="change-btn" onclick="openPasswordModal()">Change password</button>
+    </div>
+    <div class="content">
+      <form action="">
+        <div class="field-container">
+          <div class="fieldset">
+            <p>Name</p>
+            <input type="text" name="name" id="name" placeholder="Lucas Fortunato">
+          </div>
+          <div class="fieldset">
+            <p>Role</p>
+            <input type="text" name="role" id="role" placeholder="Software engineer">
+          </div>
+          <div class="fieldset">
+            <p>Sector</p>
+            <select name="sector" id="sector">
+              <option value="1">ETS</option>
+              <option value="2">CRIM</option>
+              <option value="3">TEF</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-container">
+          <button class="submit-btn cancel-btn">Cancel</button>
+          <button type="submit" class="submit-btn">Save changes</button>
+        </div>
+      </form>
     </div>
   </section>
+  <div class="changepassword-modal hidden" id="passwordModal">
+    <form action="">
+      <div class="field-container">
+        <div class="fieldset">
+          <p>Old password</p>
+          <input type="text" name="oldpassword" id="oldpassword">
+        </div>
+        <div class="fieldset">
+          <p>New password</p>
+          <input type="text" name="newpassword" id="newpassword">
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Change</button>
+    </form>
+  </div>
+  <script src="profile.js"></script>
+  <script src="editphoto.js"></script>
+  <script src="passwordModal.js"></script>
 </body>
 </html>

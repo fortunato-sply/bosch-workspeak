@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   width: 60vw;
-  height: 80vh;
+  height: 70vh;
   background-color: var(--gray-700);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: .5s;
 }
 
 .img-container {
@@ -17,11 +18,207 @@
   border-radius: 12px 12px 0 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.img-container img {
+.hover-bg {
+  width: 100%;
+  height: 20%;
+  border-radius: 12px 12px 0 0;
+  opacity: 0.7;
+  background-color: var(--gray-600);
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: var(--white);
+  display: none;
+  animation: op .2s;
+}
+
+.imagem {
   width: 150px;
   height: 150px;
+  background-position: center;
+  background-size: cover;
   border-radius: 99px;
-  margin-top: 7%;
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  z-index: 3;
+}
+
+.imagem img {
+  width: 150px;
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 99px;
+}
+
+.hover-img {
+  width: 150px;
+  height: 150px;
+  background-color: var(--gray-600);
+  opacity: 0.7;
+  border-radius: 99px;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: var(--white);
+  display: none;
+  animation: op .2s;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes op {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+input[type='file']{
+  display: none;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--white);
+  margin-top: 10%;
+}
+
+.content form {
+  width: 100%;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fieldset input, select {
+  width: 300px;
+  padding: 12px;
+  font-size: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background-color: var(--gray-900);
+  color: var(--white);
+  transition: .3s;
+}
+
+.fieldset input:focus, select:focus {
+  outline: none;
+  border: 1px solid var(--red-600);
+}
+
+.fieldset input:hover, select:hover {
+  border: 1px solid var(--red-600);
+}
+
+.fieldset {
+  color: var(--white);
+}
+
+.btn-container {
+  margin-top: 10%;
+  display: flex;
+  gap: 12px;
+}
+
+.submit-btn {
+  font-size: 1.25rem;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  border: 1px solid var(--red-600);
+  color: var(--red-600);
+}
+
+.cancel-btn:hover {
+  background-color: var(--red-600);
+  color: var(--white);
+  filter: none;
+}
+
+.change-btn {
+  position: absolute;
+  right: 10px;
+  top: calc(20% - 24px);
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 0;
+  background-color: var(--gray-900);
+  color: var(--white);
+  transition: .3s;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.change-btn:hover {
+  color: var(--gray-900);
+  background-color: var(--white);
+}
+
+.changepassword-modal {
+  position: fixed;
+  width: 40vw;
+  height: 40vh;
+  background-color: var(--gray-800);
+  border-radius: 12px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  animation: slide .8s;
+}
+
+@keyframes slide {
+  from {
+    scale: 0.5;
+    transform: translate(20%, -100%);
+  }
+  to {
+    scale: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+.changepassword-modal form .field-container{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.changepassword-modal form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 }
