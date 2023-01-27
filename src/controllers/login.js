@@ -24,7 +24,6 @@ module.exports = {
         });
         
         users.forEach(user => {
-            console.log(user);
             if(user.EDV == EDV && user.Password == dados.password)
             {
                 getUser = user;

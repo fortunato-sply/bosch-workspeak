@@ -31,38 +31,77 @@
       </form>
     </section>
     <section class="feed-container">
-      <div class="post">
-        <div class="user-info">
-          <div class="user">
-            <img src="img/bosch.png" alt="">
-            <div class="name">
-              <strong>Lucas Fortunato</strong>
-              <p>Software Developer @ ETS</p>
+      <% for(let i=0;i<posts.length;i++) { %>
+        <% if(posts[i].General == true || posts[i]['Sector.IDSector'] == getUser.IDSector) { %>
+          <div class="post">
+            <div class="user-info">
+              <div class="user">
+                <img src=
+                  <% if(posts[i]['User.Picture'] === null){ %>
+                    <%= "img/user.png"  %>  
+                  <% } else{ %> 
+                    <%= "img/" + posts[i]['User.Picture'] %> 
+                  <% } %> alt="">
+                <div class="name">
+                  <strong><%= posts[i]['User.Name'] %></strong>
+                  <p><%= posts[i]['User.Role'] %> @ 
+                      <%= posts[i]['Sector.Name'] %> </p>
+                </div>
+              </div>
+              <div class="timer">
+                <h3><%= posts[i].updatedAt.toLocaleString().substr(0, 10) %></h3>
+              </div>
+            </div>
+            <div class="content">
+              <%= posts[i].Content %>
+            </div>
+            <span class="afterline"></span>
+            <div class="comment-box">
+              <span>Leave your feedback</span>
+              <form action="addComment" method="post">
+                <input type="text" name="postID" value="<%= posts[i].IDPost %>" style="display: none;" readonly>
+                <textarea name="content" id="" cols="30" rows="10" placeholder="Write a comment..." required></textarea>
+                <button type="submit" class="submit-btn">Publish</button>
+              </form>
+            </div>
+            <span class="afterline cc"></span>
+            <div class="comments">
+              <%var show = false; 
+                for(let x=0;x<comments.length; x++){ %>
+                <%if(comments[x].IDPost == posts[i].IDPost) { %>
+                    <% if(!show) { %>
+                      <p>Comments</p>
+                      <% show = true; %> 
+                    <% } %>
+                  <div class="comment">
+                    <div class="info-user">
+                      <img src= <% if(comments[x]['User.Picture'] === null){ %>
+                                  <%= "img/user.png"  %>  
+                                <% } else{ %> 
+                                  <%= "img/" + comments[x]['User.Picture'] %> 
+                                <% } %> alt="">
+                      <div class="name">
+                        <strong><%= comments[x]['User.Name'] %></strong>
+                        <p><%= comments[x]['User.Role'] %> @ <%= comments[x]['Sector.Name'] %></p>
+                      </div>
+                    </div>
+                    <div class="comment-content">
+                      <%= comments[x].Content %>
+                    </div>
+                  </div>
+                <% } %>
+              <% } %>
             </div>
           </div>
-          <div class="timer">
-            <h3>1 week ago</h3>
-          </div>
-        </div>
-        <div class="content">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, atque? Placeat eligendi voluptates similique accusantium unde at sed quod dolor illum fugit accusamus ab, eveniet possimus. Sequi unde molestiae minus!
-        </div>
-        <span class="afterline"></span>
-        <div class="comment-box">
-          <span>Leave your feedback</span>
-          <form action="">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Write a comment..."></textarea>
-            <button type="submit" class="submit-btn">Publish</button>
-          </form>
-        </div>
-      </div>
+        <% } %>
+      <% } %>
     </section>
   </main>
   <button type="submit" class="new-post-btn" onclick="openPostModal()"><i class="ph-plus"></i></button>
   <div class="post-modal hidden" id="postModal">
     <h1>New post</h1>
-    <form action="" class="post-form">
-      <textarea name="" id="" cols="30" rows="10" placeholder="Type here..." class="txt-area" required></textarea>
+    <form action="/newPost" method="post" class="post-form">
+      <textarea name="content" id="" cols="30" rows="10" placeholder="Type here..." class="txt-area" required></textarea>
       <div class="radio">
         <div>
           <input type="radio" name="sector" id="sector" value="sectorId" checked>
