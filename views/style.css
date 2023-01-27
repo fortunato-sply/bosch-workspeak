@@ -30,6 +30,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: var(--gray-900);
+  width: 99vw;
 }
 
 header {
@@ -69,6 +70,8 @@ main {
   width: 65%;
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  margin-bottom: 100px;
 }
 
 /* PROFILE */
@@ -134,7 +137,7 @@ main {
 .post {
   width: 100%;
   background-color: var(--gray-700);
-  min-height: 45vh;
+  min-height: 0vh;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -146,6 +149,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 12px;
 }
 
 .user img {
@@ -179,8 +183,8 @@ main {
 }
 
 .content  {
-  margin-top: 5%;
-  height: 30%;
+  margin-top: 2%;
+  height: fit-content;
   text-overflow: ellipsis;
   overflow-y: scroll;
   padding: 12px;
@@ -206,10 +210,16 @@ textarea::-webkit-scrollbar-thumb {
 
 .afterline {
   align-self: center;
-  margin-top: 1em;
-  width: 96%;
-  height: 2px;
+  margin-top: 1.5em;
+  width: 80%;
+  height: 1px;
   background-color: var(--red-600);
+}
+
+.cc {
+  background-color: var(--gray-600);
+  width: 40%;
+  height: 1px;
 }
 
 .comment-box {
@@ -284,7 +294,7 @@ textarea:hover {
   padding: 12px;
   margin: 12px;
   bottom: 2vh;
-  right: 19.45vw;
+  right: 19.6vw;
   color: var(--white);
   font-size: 1.9rem;
   text-align: center;
@@ -298,10 +308,67 @@ textarea:hover {
   width: 60px;
   height: 60px;
   transition: .3s;
+  border: 0;
 }
 
 .new-post-btn:hover {
   font-size: 2.2rem;
   animation: rotate 2s ease-in-out;
   animation-delay: 50ms;
+}
+
+/* comments */
+.comments {
+  width: 100%;
+  margin-top: 3%;
+  height: fit-content;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.comments p {
+  font-size: 1.5rem;
+}
+
+.comment {
+  margin-top: 1em;
+  height: fit-content;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--gray-800);
+}
+
+.info-user img {
+  width: 60px;
+  height: 60px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--gray-900);
+}
+
+.info-user {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+}
+
+.name strong {
+  font-size: 1rem;
+}
+
+.name p {
+  font-size: 0.875rem;
+}
+
+.comment-content {
+  margin-top: 10px;
+  height: fit-content;
 }
