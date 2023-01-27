@@ -18,6 +18,12 @@
   --red-600: #D40000;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -40,6 +46,36 @@ header {
   align-items: center;
   justify-content: center;
   height: 5vh;
+}
+
+.header-box {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signout {
+  position: absolute;
+  right: 20vw;
+}
+
+.signout-btn {
+  border: 0;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+}
+
+.signout-btn:hover {
+  background-color: var(--red-600);
 }
 
 header img {
