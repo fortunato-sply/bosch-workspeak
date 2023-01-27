@@ -5,16 +5,20 @@ var comment = require('../model/comment');
 
 module.exports = {
     async addComment(req, res){
-        const getUser = temp.user;
-        const dados = req.body;
+        if(temp.user != null){        
+            const getUser = temp.user;
+            const dados = req.body;
 
-        await comment.create({
-            Content: dados.content,
-            IDUser: getUser.IDUser,
-            IDPost: dados.postID,
-            IDSector: getUser.IDSector,
-        });
+            await comment.create({
+                Content: dados.content,
+                IDUser: getUser.IDUser,
+                IDPost: dados.postID,
+                IDSector: getUser.IDSector,
+            });
 
-        res.redirect("/home");
+            res.redirect("/home");
+        } else {
+            res.redirect("/");
+        }
     }
 }

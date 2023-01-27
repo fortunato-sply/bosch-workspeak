@@ -45,4 +45,15 @@ module.exports = {
         else
             res.render('../views/login', {sectors});
     },
+    
+    async logOut(req, res){
+        temp.logout();
+        
+        const sectors = await sector.findAll({
+            raw: true,
+            attributes: ['IDSector', 'Name']
+        });
+
+        res.render('../views/login', {sectors});
+    }
 }

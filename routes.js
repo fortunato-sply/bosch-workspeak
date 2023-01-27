@@ -13,6 +13,7 @@ const comment = require('./src/controllers/comment');
 
 route.get('/home', home.pagInicialGet);
 route.get('/', login.loadPage);
+route.get('/logout', login.logOut);
 route.post('/Home', login.loginIn);
 route.post('/register', register.register);
 route.get('/edit', edit.getProfile);
