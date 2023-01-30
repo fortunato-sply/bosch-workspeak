@@ -2,6 +2,7 @@ let photo = document.getElementById('img');
 let divimg = document.getElementById('divimg');
 let file = document.getElementById('flImage');
 divimg.addEventListener('click', () => {
+  console.log('oi')
     file.click();
 });
 

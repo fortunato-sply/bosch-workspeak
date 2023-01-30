@@ -8,7 +8,7 @@ module.exports = {
         if(temp.user != null){        
             const getUser = await user.findByPk(temp.user.IDUser, {
                 raw: true,
-                attributes: ['IDUser', 'Name', 'Password', 'Role', 'IDSector', 'Picture']
+                attributes: ['IDUser', 'Name', 'Password', 'Role', 'IDSector', 'Picture', 'Description']
             });
 
             const sect = await sector.findByPk(temp.user.IDSector, {
@@ -20,7 +20,7 @@ module.exports = {
                 attributes: ['IDSector', 'Name']
             });
 
-            res.render('../views/profile', {getUser, sect, sectors});
+            res.render('../views/editprofile', {getUser, sect, sectors});
         } else{
             res.redirect("/");
         }
@@ -29,7 +29,7 @@ module.exports = {
     async saveChanges(req, res){
         if(temp.user != null){        
             const dados = req.body;
-
+            console.log(dados);
             if(req.file){
                 const antigaFoto = await user.findAll({
                     raw: true,
@@ -48,6 +48,7 @@ module.exports = {
                 Name: dados.name,
                 Role: dados.role,
                 IDSector: dados.sector,
+                Description: dados.description,
             },
             {
                 where: { IDUser: temp.user.IDUser }
@@ -55,7 +56,7 @@ module.exports = {
 
             const getUser = await user.findByPk(temp.user.IDUser, {
                 raw: true,
-                attributes: ['IDUser', 'Name', 'Password', 'Role', 'IDSector', 'Picture']
+                attributes: ['IDUser', 'Name', 'Password', 'Role', 'IDSector', 'Picture', 'Description']
             });
 
             temp.login(getUser);

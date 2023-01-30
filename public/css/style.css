@@ -202,12 +202,17 @@ main {
   align-items: center;
 }
 
-.name strong {
-  font-size: 1.475rem;
+.name {
+  text-align: left;
+}
+
+.user-btn .name strong {
+  color: var(--gray-100);
+  font-size: 1.2rem;
   letter-spacing: 1px;
 }
 
-.name p {
+.user-btn .name p {
   font-size: 0.875rem;
   color: var(--gray-300);
 }
@@ -407,4 +412,49 @@ textarea:hover {
 .comment-content {
   margin-top: 10px;
   height: fit-content;
+}
+
+.img-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.post-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-btn {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.user-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.arrow {
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.post-modal a {
+  text-decoration: none;
+}
+
+.arrow:hover {
+  transform: translateX(-50%);
+  scale: 1.1;
 }

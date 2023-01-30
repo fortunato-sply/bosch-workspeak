@@ -33,5 +33,48 @@ module.exports = {
         } else{
             res.redirect("/");
         }
-    }
+    },
+
+    async editPost(req, res){
+        if(temp.user != null){
+            const idPost = req.params.id;
+
+            const postContent = await post.findByPk(idPost, {
+                raw: true,
+                attributes: ['IDPost', 'Content', 'General']
+            });
+
+            res.render("../views/editpost.ejs", {postContent, idPost});
+        } else{
+            res.redirect("/");
+        }
+    },
+
+    async updatePost(req, res){
+        if(temp.user != null){
+            const dados = req.body;
+
+            if(dados.sector == "sectorId"){
+                await post.update({
+                    Content: dados.content,
+                    General: false,
+                },
+                {
+                    where: { IDPost: dados.idPost }
+                });
+            } else{
+                await post.update({
+                    Content: dados.content,
+                    General: true,
+                },
+                {
+                    where: { IDPost: dados.idPost }
+                });
+            }
+
+            res.redirect("/home");
+        } else{
+            res.redirect("/");
+        }
+    },
 }

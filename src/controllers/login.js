@@ -20,7 +20,7 @@ module.exports = {
         const EDV = parseInt(dados.edv);
         const users = await user.findAll({
             raw: true,
-            attributes: ['IDUser', 'Name', 'EDV', 'Password', 'IDSector', 'Role', 'Picture']
+            attributes: ['IDUser', 'Name', 'EDV', 'Password', 'IDSector', 'Role', 'Picture', 'Description'],
         });
         
         users.forEach(user => {

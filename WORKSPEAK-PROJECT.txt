@@ -21,12 +21,13 @@ EDIT PROFILE (self)
 OBJECTS
 User {
 	ID: int PK AI,
-	EDV: int,
-	Name: varchar(50),
-	Password: varchar(50),
+	EDV: int not null,
+	Name: varchar(50) not null,
+	Password: varchar(50) not null,
 	Role: varchar(20),
 	Sector: int FK(Sector) not null,
 	Picture: varchar(100),
+	Description: varchar(500),
 },
 Sector {
 	ID: int PK AI,
@@ -36,13 +37,12 @@ Post {
 	ID: int PK AI,
 	UserID: int FK(User) not null,
 	SectorID: int FK(Group) not null,
-	General: boolean,
-	Title: varchar(30),
-	Content: varchar(500)
+	General: boolean not null,
+	Content: varchar(500) not null,
 },
 Comment {
 	ID: int PK AI,
 	PostID: int FK(Post) not null,
 	UserID: int FK(User) not null,
-	Content: varchar(300)
+	Content: varchar(300) not null,
 }

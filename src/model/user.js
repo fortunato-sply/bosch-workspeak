@@ -29,6 +29,10 @@ Picture: {
     type: Sequelize.STRING(100),
     allowNull: true
 },
+Description: {
+    type: Sequelize.STRING(500),
+    allowNull: true
+},
 });
 user.belongsTo(sector, {
     constraint: true,

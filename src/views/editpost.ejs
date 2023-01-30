@@ -1,0 +1,44 @@
+<%- include('parts/header') %>
+    <link rel="stylesheet" href="/css/postModal.css">
+    <title>Workspeak | </title>
+</head>
+<body>
+  <header>
+    <div class="header-box">
+      <img src="/img/bosch.png" alt="BOSCH">
+      <form action="" method="" class="signout">
+        <button type="submit" class="signout-btn"><i class="ph-sign-out"></i></button>
+      </form>
+    </div>
+  </header>
+  <div class="post-modal" id="postModal">
+    <a href="/home">
+      <i class="ph-caret-left arrow"></i>
+    </a>
+    <h1>Edit post</h1>
+    <form action="/updatePost" class="post-form" method="post">
+        <input value="<%= idPost %>" name="idPost" style="display:none">
+      <textarea name="content" id="" cols="30" rows="10" placeholder="Type here..." class="txt-area" required>
+        <%= postContent.Content %>
+      </textarea>
+      <div class="radio">
+        <div>
+          <input type="radio" name="sector" id="sector" value="sectorId" <% if(!postContent.General){ %> checked <% } %> >
+          <label for="sector">
+            <div class="radio-btn"></div>
+            <span>Sector</span>
+          </label>
+        </div>
+        <div>
+          <input type="radio" name="sector" id="general" value="general" <% if(postContent.General){ %> checked <% } %>>
+          <label for="general">
+            <div class="radio-btn"></div>
+            <span>General</span>
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn" style="width: 40%; margin-top: 20px;">Publish</button>
+    </form>
+  </div>
+  <script src="/js/postModal.js"></script>
+<%- include('parts/footer') %> 
