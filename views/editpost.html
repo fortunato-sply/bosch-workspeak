@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="postModal.css">
+  <title>BOSCH Workspeak</title>
+</head>
+<body>
+  <header>
+    <div class="header-box">
+      <img src="bosch.png" alt="BOSCH">
+      <form action="" method="" class="signout">
+        <button type="submit" class="signout-btn"><i class="ph-sign-out"></i></button>
+      </form>
+    </div>
+  </header>
+  <div class="post-modal" id="postModal">
+    <a href="index.html">
+      <i class="ph-caret-left arrow"></i>
+    </a>
+    <h1>Edit post</h1>
+    <form action="" class="post-form">
+      <textarea name="" id="" cols="30" rows="10" placeholder="Type here..." class="txt-area" required>
+        conteudo do post
+      </textarea>
+      <div class="radio">
+        <div>
+          <input type="radio" name="sector" id="sector" value="sectorId" checked>
+          <label for="sector">
+            <div class="radio-btn"></div>
+            <span>Sector</span>
+          </label>
+        </div>
+        <div>
+          <input type="radio" name="sector" id="general" value="general">
+          <label for="general">
+            <div class="radio-btn"></div>
+            <span>General</span>
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn" style="width: 40%; margin-top: 20px;">Publish</button>
+    </form>
+  </div>
+  <script src="postModal.js"></script>
+</body>
+</html>
