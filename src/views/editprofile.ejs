@@ -1,20 +1,27 @@
 <%- include("parts/header") %> 
-  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/editprofile.css">
   <title>WorkSpeak | Profile</title>
 </head>
 <body>
   <header>
-    <img src="img/bosch.png" alt="BOSCH">
+    <div class="header-box">
+      <a href="../views/viewprofile.ejs">
+        <img src="/img/bosch.png" alt="BOSCH">
+      </a>
+      <form action="logout" method="get" class="signout">
+        <button type="submit" class="signout-btn"><i class="ph-sign-out"></i></button>
+      </form>
+    </div>
   </header>
   <form class="profile-container" id="main" action="/save" method="post" enctype="multipart/form-data">
     <div class="img-container">
       <div id="divimg" class="imagem" onmouseenter="hoverImg()" onmouseleave="hoverImg()">
         <img id='img' src=<% if(getUser.Picture === null){ %>
-            <%= "img/user.png"  %>  
-          <% } else{ %> 
-            <%= "img/" + getUser.Picture %> 
-          <% } %>
-          alt="">  
+          <%= "/img/user.png"  %>  
+        <% } else{ %> 
+          <%= "img/" + getUser.Picture %> 
+        <% } %>
+        alt="">  
         <input type="file" id="flImage" name="attfoto" accept="image/*">
         <div class="hover-img" id="hoverimg">
           <i class="ph-camera"></i>
@@ -23,8 +30,8 @@
       <button id="changebtn" class="change-btn" onclick="openPasswordModal()">Change password</button>
     </div>
     <div class="content">
-      <div class="content-form">
-        <div class="field-container">
+      <div class="field-container">
+        <div class="fields">
           <div class="fieldset">
             <p>Name</p>
             <input type="text" name="name" id="name" value="<%= getUser.Name %>" required>
@@ -32,10 +39,10 @@
           <div class="fieldset">
             <p>Role</p>
             <input type="text" name="role" id="role" required value=<% if(getUser.Role === null){ %>
-                                                                    <%= "Default" %>
-                                                                  <% } else{ %>
-                                                                    <%= getUser.Role %>
-                                                                  <% } %>>
+              <%= "Default" %>
+            <% } else{ %>
+              <%= getUser.Role %>
+            <% } %>>
           </div>
           <div class="fieldset">
             <p>Sector</p>
@@ -48,10 +55,14 @@
             </select>
           </div>
         </div>
-        <div class="btn-container">
-          <a href="/home" class="submit-btn cancel-btn">Cancel</a>
-          <button type="submit" class="submit-btn">Save Changes</button>
+        <div class="fieldset">
+          <p>Description</p>
+          <textarea name="description" id="description" cols="30" rows="10"><%= getUser.Description %></textarea>
         </div>
+      </div>
+      <div class="btn-container">
+        <a href="/home" class="submit-btn cancel-btn">Cancel</a>
+        <button type="submit" class="submit-btn">Save Changes</button>
       </div>
     </div>
   </form>
@@ -60,17 +71,18 @@
       <div class="field-container">
         <div class="fieldset">
           <p>Old password</p>
-          <input type="text" name="oldpassword" id="oldpassword">
+          <input type="text" name="oldpassword" id="oldpassword" required>
         </div>
         <div class="fieldset">
           <p>New password</p>
-          <input type="text" name="newpassword" id="newpassword">
+          <input type="text" name="newpassword" id="newpassword" required>
         </div>
       </div>
       <button type="submit" class="submit-btn">Change</button>
     </form>
   </div>
-  <script src="js/profile.js"></script>
+  <script src="js/editprofile.js"></script>
   <script src="js/editphoto.js"></script>
   <script src="js/passwordModal.js"></script>
 <%- include("parts/footer") %>
+

@@ -20,11 +20,10 @@ module.exports = {
         const EDV = parseInt(dados.edv);
         const users = await user.findAll({
             raw: true,
-            attributes: ['IDUser', 'Name', 'EDV', 'Password', 'IDSector', 'Role', 'Picture']
+            attributes: ['IDUser', 'Name', 'EDV', 'Password', 'IDSector', 'Role', 'Picture', 'Description'],
         });
         
         users.forEach(user => {
-            console.log(user);
             if(user.EDV == EDV && user.Password == dados.password)
             {
                 getUser = user;
@@ -46,4 +45,15 @@ module.exports = {
         else
             res.render('../views/login', {sectors});
     },
+    
+    async logOut(req, res){
+        temp.logout();
+        
+        const sectors = await sector.findAll({
+            raw: true,
+            attributes: ['IDSector', 'Name']
+        });
+
+        res.render('../views/login', {sectors});
+    }
 }

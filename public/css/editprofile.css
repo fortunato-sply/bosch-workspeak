@@ -91,10 +91,11 @@ input[type='file']{
   display: flex;
   justify-content: center;
   color: var(--white);
-  margin-top: 10%;
+  margin-top: 7%;
+  flex-direction: column;
 }
 
-.content-form {
+.content form {
   width: 100%;
   padding: 48px;
   display: flex;
@@ -103,9 +104,20 @@ input[type='file']{
 }
 
 .field-container {
-  width: 90%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fields {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
 .fieldset input, select {
@@ -119,12 +131,12 @@ input[type='file']{
   transition: .3s;
 }
 
-.fieldset input:focus, select:focus {
+.fieldset input:focus, select:focus, .fieldset textarea:focus {
   outline: none;
   border: 1px solid var(--red-600);
 }
 
-.fieldset input:hover, select:hover {
+.fieldset input:hover, select:hover, .fieldset textarea:hover {
   border: 1px solid var(--red-600);
 }
 
@@ -132,10 +144,19 @@ input[type='file']{
   color: var(--white);
 }
 
+.fieldset textarea {
+  padding: 12px;
+  width: 40vw;
+  border: 1px solid transparent;
+  font-size: 1rem;
+}
+
 .btn-container {
-  margin-top: 10%;
+  padding: 12px;
   display: flex;
   gap: 12px;
+  justify-content: center;
+  align-items: center;
 }
 
 .submit-btn {

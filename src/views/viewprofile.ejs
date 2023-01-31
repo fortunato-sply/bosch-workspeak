@@ -1,0 +1,46 @@
+<%- include('parts/header') %>
+    <link rel="stylesheet" href="/css/editprofile.css">
+    <link rel="stylesheet" href="/css/viewprofile.css">
+    <title>Workspeak <%= getUser.Name %></title>
+</head>
+<body>
+  <header>
+    <div class="header-box">
+        <a href="home">
+            <img src="/img/bosch.png" alt="BOSCH">
+        </a>
+        <form action="" method="" class="signout">
+            <button type="submit" class="signout-btn"><i class="ph-sign-out"></i></button>
+        </form>
+    </div>
+  </header>
+  <section class="profile-container" id="main">
+    <div class="img-container">
+      <div id="divimg" class="imagem" style="cursor: default">
+        <img id='img' src=
+        <% if(getUser.Picture === null){ %>
+          <%= "/img/user.png"  %>  
+        <% } else{ %> 
+          <%= "/img/" + getUser.Picture %> 
+        <% } %>
+          alt="">
+      </div>
+    </div>
+    <div class="content">
+        <div class="role-sector">
+            <h1 style="text-transform: uppercase"><%= sect.Name %></h1>
+            <h2><%= getUser.Role %></h2>
+        </div>
+        <div class="user-info">
+            <strong> <%= getUser.Name %> </strong>
+        </div>
+        <div class="description">
+            <%= getUser.Description %>    
+        </div>
+            <div class="back">
+            <a href="/home">Go back</a>
+        </div>
+    </div>
+  </section>
+  <script src="/js/editprofile.js"></script>
+<%- include('parts/footer') %>

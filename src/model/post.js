@@ -10,10 +10,6 @@ const post = database.define('Post', {
         allowNull: false,
         primaryKey: true
     },
-    Title: {
-        type: Sequelize.STRING(30),
-        allowNull: false
-    },
     Content: {
         type: Sequelize.STRING(500),
         allowNull: false
@@ -24,11 +20,11 @@ const post = database.define('Post', {
     },
 });
 
-user.belongsTo(user, {
+post.belongsTo(user, {
     constraint: true, //Garantir integridade referencial
     foreignKey: 'IDUser'
 });
-user.belongsTo(sector, {
+post.belongsTo(sector, {
     constraint: true, //Garantir integridade referencial
     foreignKey: 'IDSector'
 });

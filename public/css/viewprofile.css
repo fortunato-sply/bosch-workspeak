@@ -1,0 +1,88 @@
+.role-sector {
+    position: absolute;
+    right: 20px;
+    top: calc(10%);
+    display: flex;
+    flex-direction: column;
+    line-height: 0.9;
+    align-items: center;
+    animation: slidein 1s;
+  }
+  
+  .role-sector h1 {
+    font-size: 6rem;
+  }
+  
+  .role-sector h2 {
+    font-size: 1rem;
+  }
+  
+  .user-info {
+    width: 100%;
+    height: 30%;
+    font-size: 6rem;
+    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+    animation: slidein-text 1s;
+  }
+  
+  @keyframes slidein-text {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+  
+  @keyframes slidein {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  
+  .user-info strong {
+    font-weight: 400;
+  }
+  
+  .description {
+    width: 60%;
+    height: 60%;
+    margin: 0 auto;
+    padding: 16px;
+    font-size: 1rem;
+    text-align: left;
+    text-overflow: ellipsis;
+    background-color: var(--gray-800);
+    border-radius: 12px;
+  }
+  
+  .content {
+    flex-direction: column;
+  }
+  
+  .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .back a {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--red-600);
+    padding: 12px;
+    border-radius: 8px;
+    position: fixed;
+    transition: .3s;
+  }
+  
+  .back a:hover {
+    filter: brightness(1.2);
+  }

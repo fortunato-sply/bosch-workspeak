@@ -4,14 +4,28 @@ const user = require('../model/user');
 module.exports = {
     async register(req, res){
         dados = req.body;
-        console.log(dados);
+        var validateUser = true;
 
-        await user.create({
-            Name: dados.name,
-            EDV: dados.edv,
-            Password: dados.password,
-            IDSector: dados.sector,
+        const users = await user.findAll({
+            raw: true,
+            attributes: ['IDUser', 'EDV']
         });
+        
+        users.forEach(user => {
+            if(user.EDV == dados.edv)
+            {
+                validateUser = false;
+            }
+        });
+
+        if(validateUser){
+            await user.create({
+                Name: dados.name,
+                EDV: dados.edv,
+                Password: dados.password,
+                IDSector: dados.sector,
+            });
+        }
 
         const sectors = await sector.findAll({
             raw: true,

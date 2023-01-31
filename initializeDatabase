@@ -6,11 +6,15 @@ Create TABLE Sectors(
 );
 
 INSERT INTO Sectors(Name, createdAt, updatedAt) values('ETS', GETDATE(), GETDATE());
-INSERT INTO Sectors(Name, createdAt, updatedAt) values('Engenharia', GETDATE(), GETDATE());
-INSERT INTO Sectors(Name, createdAt, updatedAt) values('Limpeza', GETDATE(), GETDATE());
-INSERT INTO Sectors(Name, createdAt, updatedAt) values('Produção', GETDATE(), GETDATE());
-INSERT INTO Sectors(Name, createdAt, updatedAt) values('Produção', GETDATE(), GETDATE());
-INSERT INTO Sectors(Name, createdAt, updatedAt) values('Segurança', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('ICO', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('BDO', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('TEF', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('CRIM', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('PRESET', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('QMM', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('CARE', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('INOVE', GETDATE(), GETDATE());
+INSERT INTO Sectors(Name, createdAt, updatedAt) values('FCM', GETDATE(), GETDATE());
 
 -- Se precisar :) --
 delete from Sectors

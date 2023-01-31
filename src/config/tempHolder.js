@@ -5,5 +5,10 @@ var Store = module.exports = {
     },
     logout: function() {
         Store.user = null;
-    }
+    },
+    isLogged: function() {
+        if(Store.user == null)
+            return false;
+        return true;
+    },
 }

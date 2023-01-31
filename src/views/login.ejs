@@ -1,56 +1,56 @@
-  <%- include("parts/header.ejs") %> 
-  <title>WorkSpeak | Login</title>
-  <link rel="stylesheet" href="css/login.css">
+<%- include("parts/header.ejs") %> 
+<title>WorkSpeak | Login</title>
+<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <section class="login-box">
-    <div class="login show" id="login">
-      <h1>Login</h1>
-      <form action="/Home" method="post" class="form">
-        <div class="fieldset">
-          <label for="edv">EDV</label>
-          <input type="text" name="edv" id="edv" required>
-        </div>
-        <div class="fieldset">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" required>
-        </div>
-        <button type="submit" class="submit-btn">Continue</button>
-      </form>
-      <span class="signup-btn" onclick="switchForms()">New here? <p>Create an account</p></span>
-      <a href="#">Forgot your password?</a>
-    </div>
-    <div class="signup hidden" id="signup">
-      <h1>Sign up</h1>
-      <form action="/register" method="post" class="form">
-        <div class="fieldset">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" required>
-        </div>
-        <div class="fieldset">
-          <label for="edv-s">EDV</label>
-          <input type="text" name="edv" id="edv-s" required>
-        </div>
-        <div class="fieldset">
-          <label for="password-s">Password</label>
-          <input type="password" name="password" id="password-s" required>
-        </div>
-        <div class="fieldset">
-          <select name="sector" id="sector" required>
-            <option value="0" selected disabled>Select the sector</option>
-            <% for (let i=0; i<sectors.length; i++) { %>            
-              <option value="<%= sectors[i].IDSector %>"><%= sectors[i].Name %></option>
-            <% } %> 
-          </select>
-        </div>
-        <button type="submit" class="submit-btn">Continue</button>
-      </form>
-      <span class="signup-btn" onclick="switchForms()">Back to login</span>
-    </div>
-    <div class="picture">
-      <img src="img/bosch.png" alt="">
-    </div>
-  </section>
-  <script src="js/login.js"></script>
+<section class="login-box">
+  <div class="login show" id="login">
+    <h1>Login</h1>
+    <form action="/Home" method="post" class="form">
+      <div class="fieldset">
+        <label for="edv">EDV</label>
+        <input type="number" name="edv" id="edv" required>
+      </div>
+      <div class="fieldset">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <button type="submit" class="submit-btn">Continue</button>
+    </form>
+    <span class="signup-btn" onclick="switchForms()">New here? <p>Create an account</p></span>
+    <a href="#">Forgot your password?</a>
+  </div>
+  <div class="signup hidden" id="signup">
+    <h1>Sign up</h1>
+    <form action="/register" method="post" class="form">
+      <div class="fieldset">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+      <div class="fieldset">
+        <label for="edv-s">EDV</label>
+        <input type="number" name="edv" id="edv-s" required>
+      </div>
+      <div class="fieldset">
+        <label for="password-s">Password</label>
+        <input type="password" name="password" id="password-s" required>
+      </div>
+      <div class="fieldset">
+        <select name="sector" id="sector" required>
+          <option value="" disabled selected>Select the sector</option>
+          <% for (let i=0; i<sectors.length; i++) { %>            
+            <option value="<%= sectors[i].IDSector %>"><%= sectors[i].Name %></option>
+          <% } %> 
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Continue</button>
+    </form>
+    <span class="signup-btn" onclick="switchForms()">Back to login</span>
+  </div>
+  <div class="picture">
+    <img src="img/bosch.png" alt="">
+  </div>
+</section> 
+<script src="js/login.js"></script>
 </body>
 </html>
