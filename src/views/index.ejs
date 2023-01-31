@@ -95,7 +95,7 @@
                       <% show = true; %> 
                     <% } %>
                   <div class="comment">
-                    <form class="info-user" action="/userProfile/<%= posts[i]['User.IDUser'] %>" method="post">
+                    <form class="info-user" action="/userProfile/<%= comments[x]['User.IDUser'] %>" method="post">
                       <button type="submit" class="user-btn">
                         <img src= <% if(comments[x]['User.Picture'] === null){ %>
                                     <%= "img/user.png"  %>  
