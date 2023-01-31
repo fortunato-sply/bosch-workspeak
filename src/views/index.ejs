@@ -30,9 +30,7 @@
       </div>
       <div class="role">
         <strong><%= getUser.Name %></strong>
-        <p><% if(getUser.Role === null){ %>
-          <%= "Default" %>
-        <% } else{ %>
+        <p><% if(getUser.Role != null){ 
           <%= getUser.Role %>
         <% } %></p>
       </div>

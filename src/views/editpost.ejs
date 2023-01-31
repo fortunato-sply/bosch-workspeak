@@ -6,7 +6,7 @@
   <header>
     <div class="header-box">
       <img src="/img/bosch.png" alt="BOSCH">
-      <form action="" method="" class="signout">
+      <form action="/logout" method="get" class="signout">
         <button type="submit" class="signout-btn"><i class="ph-sign-out"></i></button>
       </form>
     </div>
@@ -17,10 +17,7 @@
     </a>
     <h1>Edit post</h1>
     <form action="/updatePost" class="post-form" method="post">
-        <input value="<%= idPost %>" name="idPost" style="display:none">
-      <textarea name="content" id="" cols="30" rows="10" placeholder="Type here..." class="txt-area" required>
-        <%= postContent.Content %>
-      </textarea>
+      <textarea name="content" cols="30" rows="10" placeholder="Type here..." class="txt-area" required><%=postContent.Content%></textarea>
       <div class="radio">
         <div>
           <input type="radio" name="sector" id="sector" value="sectorId" <% if(!postContent.General){ %> checked <% } %> >
@@ -37,6 +34,7 @@
           </label>
         </div>
       </div>
+      <input value="<%= idPost %>" name="idPost" style="display:none">
       <button type="submit" class="submit-btn" style="width: 40%; margin-top: 20px;">Publish</button>
     </form>
   </div>

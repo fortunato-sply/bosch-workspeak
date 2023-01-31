@@ -36,10 +36,10 @@
           <input type="password" name="password" id="password-s" required>
         </div>
         <div class="fieldset">
-          <select name="sector" id="sector" required>
-            <option value="0" selected disabled>Select the sector</option>
+          <select name="sector" id="sector">
+            <option value="0" selected required>Select the sector</option>
             <% for (let i=0; i<sectors.length; i++) { %>            
-              <option value="<%= sectors[i].IDSector %>"><%= sectors[i].Name %></option>
+              <option value="<%= sectors[i].IDSector %>" required><%= sectors[i].Name %></option>
             <% } %> 
           </select>
         </div>

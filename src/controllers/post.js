@@ -40,7 +40,6 @@ module.exports = {
             const idPost = req.params.id;
 
             const postContent = await post.findByPk(idPost, {
-                raw: true,
                 attributes: ['IDPost', 'Content', 'General']
             });
 
