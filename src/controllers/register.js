@@ -22,7 +22,6 @@ module.exports = {
             await user.create({
                 Name: dados.name,
                 EDV: dados.edv,
-                Role: "Default",
                 Password: dados.password,
                 IDSector: dados.sector,
             });
