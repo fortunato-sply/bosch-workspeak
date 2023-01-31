@@ -61,7 +61,7 @@
                   </button>
                 </form>
                 <% if(getUser.IDUser == posts[i]['User.IDUser']) { %>
-                  <form action="editpost/<%= posts[i].IDPost %>" method="post">
+                  <form action="editpost/<%= posts[i].IDPost %>" method="post" class="editform">
                     <button type="submit" class="edit-btn post-btn"><i class="ph-pencil-simple"></i></button>
                   </form>
                   <% } %>
@@ -78,7 +78,10 @@
               <span>Leave your feedback</span>
               <form action="addComment" method="post">
                 <input type="text" name="postID" value="<%= posts[i].IDPost %>" style="display: none;" readonly>
-                <textarea name="content" id="" cols="30" rows="10" placeholder="Write a comment..." required></textarea>
+                <div class="content-box">
+                  <textarea name="content" maxlength="300" id="textComment" cols="30" rows="10" placeholder="Write a comment..." required></textarea>
+                  <span id="countComment">0/300</span>
+                </div>
                 <button type="submit" class="submit-btn">Publish</button>
               </form>
             </div>
@@ -121,7 +124,10 @@
   <div class="post-modal hidden" id="postModal">
     <h1>New post</h1>
     <form action="/newPost" method="post" class="post-form">
-      <textarea name="content" id="" cols="30" rows="10" placeholder="Type here..." class="txt-area" required></textarea>
+      <div class="content-box">
+        <textarea name="content" id="textContent" cols="30" rows="10" placeholder="Type here..." class="txt-area" required></textarea>
+        <p id="countContent">0/500</p>
+      </div>
       <div class="radio">
         <div>
           <input type="radio" name="sector" id="sector" value="sectorId" checked>
@@ -142,4 +148,5 @@
     </form>
   </div>
   <script src="js/postModal.js"></script>
+  <script src="js/textSize.js"></script>
 <%- include("parts/footer.ejs") %> 

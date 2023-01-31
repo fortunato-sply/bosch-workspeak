@@ -288,6 +288,7 @@ textarea {
   height: 100px;
   font-weight: 400;
   transition: all .5s;
+  width: 100%;
 }
 
 textarea:focus {
@@ -421,11 +422,12 @@ textarea:hover {
 }
 
 .post-btn {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
 }
 
 .user-btn {
@@ -441,6 +443,7 @@ textarea:hover {
   display: flex;
   gap: 20px;
   align-items: center;
+  justify-content: center;
 }
 
 .arrow {
@@ -457,4 +460,37 @@ textarea:hover {
 .arrow:hover {
   transform: translateX(-50%);
   scale: 1.1;
+}
+
+.content-box {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-box textarea {
+  width: 100%;
+}
+
+.content-box span {
+  position: relative;
+  left: 90%;
+  bottom: 28%;
+  font-size: 0.875rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.content-box p {
+  position: relative;
+  left: 90%;
+  bottom: 18%;
+  color: var(--white);
+  opacity: 0.5;
+}
+
+.editform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
