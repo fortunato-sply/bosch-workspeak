@@ -26,7 +26,7 @@ Role: {
     allowNull: true
 },
 Picture: {
-    type: Sequelize.STRING(100),
+    type: Sequelize.STRING(300),
     allowNull: true
 },
 Description: {
