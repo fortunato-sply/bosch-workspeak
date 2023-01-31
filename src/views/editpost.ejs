@@ -17,7 +17,7 @@
     </a>
     <h1>Edit post</h1>
     <form action="/updatePost" class="post-form" method="post">
-      <textarea name="content" cols="30" rows="10" placeholder="Type here..." class="txt-area" required><%=postContent.Content%></textarea>
+      <textarea name="content" maxlength="500" cols="30" rows="10" placeholder="Type here..." class="txt-area" required><%=postContent.Content%></textarea>
       <div class="radio">
         <div>
           <input type="radio" name="sector" id="sector" value="sectorId" <% if(!postContent.General){ %> checked <% } %> >
