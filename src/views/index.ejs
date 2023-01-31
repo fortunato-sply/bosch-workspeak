@@ -78,7 +78,7 @@
               <span>Leave your feedback</span>
               <form action="addComment" method="post">
                 <input type="text" name="postID" value="<%= posts[i].IDPost %>" style="display: none;" readonly>
-                <div class="content-box">
+                <div class="content-box" style="height: 130px;">
                   <textarea name="content" maxlength="300" id="textComment" cols="30" rows="10" placeholder="Write a comment..." required></textarea>
                   <span id="countComment">0/300</span>
                 </div>
