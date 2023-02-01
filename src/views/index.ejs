@@ -53,19 +53,19 @@
                   <form class="user" action="/userProfile/<%= posts[i]['User.IDUser'] %>" method="post">
                     <button type="submit" class="user-btn">
                       <img src=<% if(posts[i]['User.Picture']===null){ %>
-                      <%= "img/user.png" %>
-                        <% } else{ %>
-                          <%= "img/" + posts[i]['User.Picture'] %>
-                            <% } %> alt="">
-                              <div class="name">
-                                <strong>
-                                  <%= posts[i]['User.Name'] %>
-                                </strong>
-                                <p>
-                                  <%= posts[i]['User.Role'] %> @
-                                    <%= posts[i]['Sector.Name'] %>
-                                </p>
-                              </div>
+                        <%= "img/user.png" %>
+                      <% } else{ %>
+                        <%= "img/" + posts[i]['User.Picture'] %>
+                      <% } %> alt="">
+                      <div class="name">
+                        <strong>
+                          <%= posts[i]['User.Name'] %>
+                        </strong>
+                        <p>
+                          <%= posts[i]['User.Role'] %> @
+                          <%= posts[i]['Sector.Name'] %>
+                        </p>
+                      </div>
                     </button>
                   </form>
                 </div>
@@ -77,15 +77,15 @@
                     <div class="options">
                       <i class="ph-dots-three-vertical"></i>
                       <div class="options-modal">
-                        <form action="edit" class="editform">
+                        <form action="/editPost/<%=posts[i].IDPost%>" method="post" class="editform">
                           <button type="submit" class="editform-btn"><i class="ph-pencil-simple"></i> Edit</button>
                         </form>
-                        <form action="delete" class="editform del">
+                        <form action="/deletePost/<%=posts[i].IDPost%>" method="post" class="editform del">
                           <button type="submit" class="editform-btn del"><i class="ph-trash"></i> Delete</button>
                         </form>
                       </div>
                     </div>
-                    <% } %>
+                  <% } %>
                 </div>
               </div>
               <div class="content">
@@ -104,42 +104,42 @@
                   <button type="submit" class="submit-btn">Publish</button>
                 </form>
               </div>
-              <span class="afterline cc"></span>
               <div class="comments">
                 <%var show=false; for(let x=0;x<comments.length; x++){ %>
                   <%if(comments[x].IDPost==posts[i].IDPost) { %>
                     <% if(!show) { %>
+                      <span class="afterline cc"></span>
                       <p>Comments</p>
                       <% show=true; %>
-                        <% } %>
-                          <div class="comment">
-                            <form class="info-user" action="/userProfile/<%= posts[i]['User.IDUser'] %>" method="post">
-                              <button type="submit" class="user-btn">
-                                <img src=<% if(comments[x]['User.Picture']===null){ %>
-                                <%= "img/user.png" %>
-                                  <% } else{ %>
-                                    <%= "img/" + comments[x]['User.Picture'] %>
-                                      <% } %> alt="">
-                                        <div class="name">
-                                          <strong style="font-size: 1rem;">
-                                            <%= comments[x]['User.Name'] %>
-                                          </strong>
-                                          <p>
-                                            <%= comments[x]['User.Role'] %> @ <%= comments[x]['Sector.Name'] %>
-                                          </p>
-                                        </div>
-                              </button>
-                            </form>
-                            <div class="comment-content">
-                              <%= comments[x].Content %>
-                            </div>
+                    <% } %>
+                    <div class="comment">
+                      <form class="info-user" action="/userProfile/<%= posts[i]['User.IDUser'] %>" method="post">
+                        <button type="submit" class="user-btn">
+                          <img src=<% if(comments[x]['User.Picture']===null){ %>
+                            <%= "img/user.png" %>
+                          <% } else{ %>
+                            <%= "img/" + comments[x]['User.Picture'] %>
+                          <% } %> alt="">
+                          <div class="name">
+                            <strong style="font-size: 1rem;">
+                              <%= comments[x]['User.Name'] %>
+                            </strong>
+                            <p>
+                              <%= comments[x]['User.Role'] %> @ <%= comments[x]['Sector.Name'] %>
+                            </p>
                           </div>
-                          <% } %>
-                            <% } %>
+                        </button>
+                      </form>
+                      <div class="comment-content">
+                        <%= comments[x].Content %>
+                      </div>
+                    </div>
+                  <% } %>
+                <% } %>
               </div>
             </div>
-            <% } %>
-              <% } %>
+          <% } %>
+        <% } %>
       </section>
     </main>
     <button type="submit" class="new-post-btn" onclick="openPostModal()"><i class="ph-plus"></i></button>
