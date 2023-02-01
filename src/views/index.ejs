@@ -75,7 +75,7 @@
                   </h3>
                   <% if(getUser.IDUser==posts[i]['User.IDUser']) { %>
                     <div class="options">
-                      <i class="ph-dots-three-vertical"></i>
+                      <i class="ph-dots-three-vertical dots"></i>
                       <div class="options-modal">
                         <form action="edit" class="editform">
                           <button type="submit" class="editform-btn"><i class="ph-pencil-simple"></i> Edit</button>
@@ -113,23 +113,28 @@
                       <% show=true; %>
                         <% } %>
                           <div class="comment">
-                            <form class="info-user" action="/userProfile/<%= posts[i]['User.IDUser'] %>" method="post">
-                              <button type="submit" class="user-btn">
-                                <img src=<% if(comments[x]['User.Picture']===null){ %>
-                                <%= "img/user.png" %>
-                                  <% } else{ %>
-                                    <%= "img/" + comments[x]['User.Picture'] %>
-                                      <% } %> alt="">
-                                        <div class="name">
-                                          <strong style="font-size: 1rem;">
-                                            <%= comments[x]['User.Name'] %>
-                                          </strong>
-                                          <p>
-                                            <%= comments[x]['User.Role'] %> @ <%= comments[x]['Sector.Name'] %>
-                                          </p>
-                                        </div>
-                              </button>
-                            </form>
+                            <div class="top">
+                              <form class="info-user" action="/userProfile/<%= posts[i]['User.IDUser'] %>" method="post">
+                                <button type="submit" class="user-btn">
+                                  <img src=<% if(comments[x]['User.Picture']===null){ %>
+                                  <%= "img/user.png" %>
+                                    <% } else{ %>
+                                      <%= "img/" + comments[x]['User.Picture'] %>
+                                        <% } %> alt="">
+                                          <div class="name">
+                                            <strong style="font-size: 1rem;">
+                                              <%= comments[x]['User.Name'] %>
+                                            </strong>
+                                            <p>
+                                              <%= comments[x]['User.Role'] %> @ <%= comments[x]['Sector.Name'] %>
+                                            </p>
+                                          </div>
+                                </button>
+                              </form>
+                              <form action="delcomment">
+                                <i class="ph-trash delbtn"></i>
+                              </form>
+                            </div>
                             <div class="comment-content">
                               <%= comments[x].Content %>
                             </div>

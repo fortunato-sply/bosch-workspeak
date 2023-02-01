@@ -513,9 +513,15 @@ textarea:hover {
   align-items: center;
 }
 
-.options i {
+.options .dots {
   font-size: 1.8rem;
   cursor: pointer;
+  transition: .5s;
+}
+
+.options:hover .dots {
+  color: var(--red-600);
+  transform: translate(15px, 25px);
 }
 
 .options-modal {
@@ -528,6 +534,7 @@ textarea:hover {
   animation: options-slide .3s;
   background: rgba(0, 0, 0, 0.65);
   border-radius: 8px;
+  transition: .3s;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -578,4 +585,23 @@ textarea:hover {
   to {
     opacity: 1;
   }
+}
+
+.top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delbtn {
+  padding: 6px 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: .3s;
+  color: var(--gray-100);
+}
+
+.delbtn:hover {
+  color: var(--red-600);
 }
