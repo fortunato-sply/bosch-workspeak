@@ -1,6 +1,7 @@
 var temp = require('../config/tempHolder');
 var post = require('../model/post');
 var sector = require('../model/sector');
+var comment = require('../model/comment');
 
 module.exports = {
     async newPost(req, res){
@@ -53,9 +54,13 @@ module.exports = {
         if(temp.user != null){
             const idPost = req.params.id;
 
+            await comment.destroy({
+                where: {IDPost: idPost}
+            });
+
             await post.destroy({
                 where: {IDPost: idPost}
-            })
+            });
 
             res.redirect("/home");
         } else{

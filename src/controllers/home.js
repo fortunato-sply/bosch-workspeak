@@ -33,7 +33,7 @@ module.exports = {
             
             const comments = await comment.findAll({
                 raw: true,
-                attributes: ['Content', 'IDPost'],
+                attributes: ['IDComment', 'Content', 'IDPost'],
                 include: [{
                     model: user,
                     required: true,

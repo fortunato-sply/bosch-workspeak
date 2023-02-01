@@ -25,6 +25,7 @@ route.post('/editPost/:id', post.editPost);
 route.post('/deletePost/:id', post.deletePost);
 route.post('/updatePost', post.updatePost);
 route.post('/addComment', comment.addComment);
+route.post('/deleteComment/:id', comment.deleteComment);
 route.post('/userProfile/:id', user.getProfile);
 
 module.exports = route;

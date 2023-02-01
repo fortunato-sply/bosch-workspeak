@@ -20,5 +20,19 @@ module.exports = {
         } else {
             res.redirect("/");
         }
-    }
+    },
+    
+    async deleteComment(req, res){
+        if(temp.user != null){
+            const idComment = req.params.id;
+
+            await comment.destroy({
+                where: {IDComment: idComment}
+            })
+
+            res.redirect("/home");
+        } else{
+            res.redirect("/");
+        }
+    },
 }
