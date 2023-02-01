@@ -24,7 +24,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -113,7 +113,7 @@ main {
 /* PROFILE */
 
 .background {
-  
+
   border-radius: 8px 8px 0 0;
   width: 100%;
   height: 25%;
@@ -223,7 +223,7 @@ main {
   color: var(--gray-300);
 }
 
-.content  {
+.content {
   margin-top: 2%;
   height: fit-content;
   text-overflow: ellipsis;
@@ -241,12 +241,15 @@ main {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--gray-800);    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
+  background-color: var(--gray-800);
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
 }
 
 textarea::-webkit-scrollbar-thumb {
-  background-color: var(--gray-600);    /* color of the scroll thumb */
+  background-color: var(--gray-600);
+  /* color of the scroll thumb */
 }
 
 .afterline {
@@ -326,6 +329,7 @@ textarea:hover {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -495,4 +499,83 @@ textarea:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.timer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options i {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.options-modal {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  border-radius: 8px;
+  right: 23vw;
+  display: none;
+  animation: options-slide .3s;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.options:hover .options-modal {
+  display: block;
+}
+
+.editform {
+  width: 100%;
+  height: 50%;
+  border-radius: 8px 8px 0 0;
+}
+
+.editform-btn {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--white);
+  background-color: transparent;
+  transition: .1s;
+}
+
+.del {
+  border-radius: 0 0 8px 8px;
+  height: 40px;
+}
+
+.editform-btn:hover {
+  background-color: var(--red-600);
+}
+
+.editform-btn i {
+  font-size: 1.25rem;
+}
+
+@keyframes options-slide {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
