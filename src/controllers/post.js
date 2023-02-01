@@ -47,6 +47,20 @@ module.exports = {
         } else{
             res.redirect("/");
         }
+    }, 
+    
+    async deletePost(req, res){
+        if(temp.user != null){
+            const idPost = req.params.id;
+
+            await post.destroy({
+                where: {IDPost: idPost}
+            })
+
+            res.redirect("/home");
+        } else{
+            res.redirect("/");
+        }
     },
 
     async updatePost(req, res){

@@ -22,6 +22,7 @@ route.post('/save', multer(config).single('attfoto'), edit.saveChanges);
 route.post('/changePassword', edit.changePassword);
 route.post('/newPost', post.newPost);
 route.post('/editPost/:id', post.editPost);
+route.post('/deletePost/:id', post.deletePost);
 route.post('/updatePost', post.updatePost);
 route.post('/addComment', comment.addComment);
 route.post('/userProfile/:id', user.getProfile);

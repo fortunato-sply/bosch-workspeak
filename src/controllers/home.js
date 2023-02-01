@@ -37,7 +37,7 @@ module.exports = {
                 include: [{
                     model: user,
                     required: true,
-                    attributes: ['Name', 'Picture', 'Role'],
+                    attributes: ['IDUser', 'Name', 'Picture', 'Role'],
                 },{
                     model: sector,
                     required: true,
