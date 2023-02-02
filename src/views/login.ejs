@@ -23,7 +23,10 @@
           </div>
           <div class="fieldset">
             <label for="password">Password</label>
-            <input type="password" maxlength="50" name="password" id="password" required>
+            <div>
+              <input type="password" maxlength="50" name="password" id="password" required>
+              <i class="ph-eye-slash" id="iconPassword1" onclick="showPassword1()"></i>
+            </div>
           </div>
           <button type="submit" class="submit-btn">Continue</button>
         </form>
@@ -45,7 +48,10 @@
           </div>
           <div class="fieldset">
             <label for="password-s">Password</label>
-            <input type="password" maxlength="50" name="password" id="password-s" required>
+            <div>
+              <input type="password" maxlength="50" name="password" id="password-s" required>
+              <i class="ph-eye-slash" id="iconPassword2" onclick="showPassword2()"></i>
+            </div>
           </div>
           <div class="fieldset">
             <select name="sector" id="sector" required>
@@ -66,4 +72,4 @@
       </div>
     </section>
     <script src="js/login.js"></script>
-<%- include("parts/footer.ejs") %>
+  <%- include("parts/footer.ejs") %>

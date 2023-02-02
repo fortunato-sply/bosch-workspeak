@@ -18,6 +18,10 @@
   --red-600: #D40000;
 }
 
+#password, #password-s{
+  padding-right: 48px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -507,10 +511,29 @@ textarea:hover {
 .content-box span {
   position: relative;
   left: 90%;
-  bottom: 28%;
+  bottom: 30%;
   font-size: 0.875rem;
   font-weight: 400;
   opacity: 0.5;
+}
+
+.ph-eye, .ph-eye-slash{
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.5;
+  cursor: pointer;
+  width: fit-content;
+  right: calc(50% + 150px);
+}
+
+.fieldset div {
+  display: flex;
+  align-items: center;
+}
+
+.x {
+  right: calc(50% - 7vw);
 }
 
 .content-box p {

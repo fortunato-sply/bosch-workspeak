@@ -74,11 +74,17 @@
       <div class="field-container">
         <div class="fieldset">
           <p>Old password</p>
-          <input type="text" maxlength="50" name="oldpassword" id="oldpassword" required>
+          <div>
+            <input type="password" maxlength="50" name="oldpassword" id="password" required>
+            <i class="ph-eye-slash x" id="iconPassword1" onclick="showPassword1()"></i>
+          </div>
         </div>
         <div class="fieldset">
           <p>New password</p>
-          <input type="text" maxlength="50" name="newpassword" id="newpassword" required>
+          <div>
+            <input type="password" maxlength="50" name="newpassword" id="password-s" required>
+            <i class="ph-eye-slash x" id="iconPassword2" onclick="showPassword2()"></i>
+          </div>
         </div>
       </div>
       <button type="submit" class="submit-btn">Change</button>
@@ -87,5 +93,6 @@
   <script src="js/editprofile.js"></script>
   <script src="js/editphoto.js"></script>
   <script src="js/passwordModal.js"></script>
+  <script src="js/login.js"></script>
 <%- include("parts/footer") %>
 
