@@ -131,11 +131,13 @@
                             </div>
                           </button>
                         </form>
-                        <form action="/deleteComment/<%= comments[x].IDComment %>" method="post">
-                          <button type="submit" style="border: 0; background-color: transparent;">
-                            <i class="ph-trash delbtn"></i>
-                          </button>
-                        </form>
+                        <% if (getUser.IDUser == comments[x]['User.IDUser']) { %>
+                          <form action="/deleteComment/<%= comments[x].IDComment %>" method="post">
+                            <button type="submit" style="border: 0; background-color: transparent;">
+                              <i class="ph-trash delbtn"></i>
+                            </button>
+                          </form>
+                        <% } %>
                       </div>
                       <div class="comment-content">
                         <%= comments[x].Content %>
