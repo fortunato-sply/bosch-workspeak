@@ -4,7 +4,7 @@
   transform: translate(-50%, -50%);
   width: 40vw;
   height: 55vh;
-  background-color: var(--gray-800);
+  background-color: var(--gray-700);
   border-radius: 12px;
   animation: easeModal .8s;
   padding: 48px;

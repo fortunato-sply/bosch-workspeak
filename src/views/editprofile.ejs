@@ -3,10 +3,13 @@
   <title>WorkSpeak | Profile</title>
 </head>
 <body>
-  <header>
+  <header id="head">
     <div class="header-box">
-      <a href="/home">
-        <img src="/img/bosch.png" alt="BOSCH">
+      <button class="lightmode-btn" onclick="switchColorTheme()">
+        <i id="mode-icon" class="ph-sun"></i>
+      </button>
+      <a href="home">
+        <img src="img/bosch.png" alt="BOSCH">
       </a>
       <form action="logout" method="get" class="signout">
         <button type="submit" class="signout-btn"><i class="ph-sign-out"></i></button>

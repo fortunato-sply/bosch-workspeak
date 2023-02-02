@@ -4,8 +4,11 @@
   </head>
 
   <body>
-    <header>
+    <header id="head">
       <div class="header-box">
+        <button class="lightmode-btn" onclick="switchColorTheme()">
+          <i id="mode-icon" class="ph-sun"></i>
+        </button>
         <a href="home">
           <img src="img/bosch.png" alt="BOSCH">
         </a>
@@ -58,7 +61,7 @@
                         <%= "img/" + posts[i]['User.Picture'] %>
                       <% } %> alt="">
                       <div class="name">
-                        <strong>
+                        <strong class="nm">
                           <%= posts[i]['User.Name'] %>
                         </strong>
                         <p>
@@ -91,7 +94,6 @@
               <div class="content">
                 <%= posts[i].Content %>
               </div>
-              <span class="afterline"></span>
               <div class="comment-box">
                 <span>Leave your feedback</span>
                 <form action="addComment" method="post">
@@ -176,6 +178,9 @@
         </div>
         <button type="submit" class="submit-btn" style="width: 40%; margin-top: 20px;">Publish</button>
       </form>
+    </div>
+    <a href="#head">
+      x
     </div>
     <script src="js/postModal.js"></script>
     <script src="js/textSize.js"></script>

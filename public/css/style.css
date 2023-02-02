@@ -48,16 +48,37 @@ header {
   height: 5vh;
 }
 
-.header-box {
-  width: 60vw;
+header a {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.signout {
-  position: absolute;
-  right: 20vw;
+.header-box {
+  height: 5vh;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lightmode-btn {
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .3s;
+  color: var(--white);
+}
+
+.lightmode-btn:hover {
+  scale: 1.1;
 }
 
 .signout-btn {
@@ -65,7 +86,7 @@ header {
   padding: 6px;
   border-radius: 8px;
   background-color: transparent;
-  color: #fff;
+  color: var(--white);
   font-size: 1.5rem;
   cursor: pointer;
   display: flex;
@@ -127,7 +148,7 @@ main {
   margin-top: 30px;
   width: 100px;
   height: 100px;
-  background-color: var(--gray-900);
+  background-color: var(--gray-600);
   border-radius: 8px;
   border: 1px var(--red-600) solid;
 }
@@ -193,7 +214,7 @@ main {
   height: 70px;
   border-radius: 10px;
   padding: 8px;
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
 }
 
 .user {
@@ -254,16 +275,15 @@ textarea::-webkit-scrollbar-thumb {
 
 .afterline {
   align-self: center;
-  margin-top: 1.5em;
-  width: 80%;
+  width: 20%;
   height: 1px;
   background-color: var(--red-600);
 }
 
 .cc {
-  background-color: var(--gray-600);
-  width: 40%;
+  width: 30%;
   height: 1px;
+  margin-bottom: 30px;
 }
 
 .comment-box {
@@ -299,7 +319,7 @@ textarea:focus {
 }
 
 textarea:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 
 .comment-box span {
@@ -383,15 +403,15 @@ textarea:hover {
   height: fit-content;
   padding: 12px;
   border-radius: 8px;
-  background-color: var(--gray-800);
+  background-color: var(--gray-900);
 }
 
 .info-user img {
-  width: 60px;
-  height: 60px;
-  padding: 12px;
+  width: 70px;
+  height: 70px;
+  padding: 8px;
   border-radius: 8px;
-  background-color: var(--gray-900);
+  background-color: var(--gray-800);
 }
 
 .info-user {
@@ -406,12 +426,18 @@ textarea:hover {
   flex-direction: column;
 }
 
-.name strong {
+.nm {
   font-size: 1rem;
+  color: var(--white)!important;
+}
+
+.name strong {
+  color: var(--white)!important;
 }
 
 .name p {
   font-size: 0.875rem;
+  color: var(--white);
 }
 
 .comment-content {
@@ -536,6 +562,7 @@ textarea:hover {
   border-radius: 8px;
   transition: .3s;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 
 .options:hover .options-modal {
@@ -559,7 +586,7 @@ textarea:hover {
   justify-content: center;
   font-size: 1rem;
   cursor: pointer;
-  color: var(--white);
+  color: #fff;
   background-color: transparent;
   transition: .1s;
 }
@@ -599,7 +626,7 @@ textarea:hover {
   font-size: 1.4rem;
   cursor: pointer;
   transition: .3s;
-  color: var(--gray-100);
+  color: var(--white);
 }
 
 .delbtn:hover {

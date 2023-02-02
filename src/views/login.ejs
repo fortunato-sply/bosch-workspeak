@@ -1,59 +1,69 @@
-<%- include("parts/header.ejs") %> 
-<title>WorkSpeak | Login</title>
-<link rel="stylesheet" href="css/login.css">
-</head>
-<body>
-<section class="login-box">
-  <div class="login show" id="login">
-    <h1>Login</h1>
-    <form action="/Home" method="post" class="form">
-      <div class="fieldset">
-        <label for="edv">EDV</label>
-        <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-        type = "number" maxlength = "10" name="edv" id="edv" required>
+<%- include("parts/header.ejs") %>
+  <title>WorkSpeak | Login</title>
+  <link rel="stylesheet" href="css/login.css">
+  </head>
+
+  <body>
+    <header id="head">
+      <div class="header-box header-login">
+        <button class="lightmode-btn" onclick="switchColorTheme()">
+          <i id="mode-icon" class="ph-sun"></i>
+        </button>
       </div>
-      <div class="fieldset">
-        <label for="password">Password</label>
-        <input type="password" maxlength="50" name="password" id="password" required>
+    </header>
+    <section class="login-box">
+      <div class="login show" id="login">
+        <h1>Login</h1>
+        <form action="/Home" method="post" class="form">
+          <div class="fieldset">
+            <label for="edv">EDV</label>
+            <input
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              type="number" maxlength="10" name="edv" id="edv" required>
+          </div>
+          <div class="fieldset">
+            <label for="password">Password</label>
+            <input type="password" maxlength="50" name="password" id="password" required>
+          </div>
+          <button type="submit" class="submit-btn">Continue</button>
+        </form>
+        <span class="signup-btn" onclick="switchForms()">New here? <p>Create an account</p></span>
+        <a href="#">Forgot your password?</a>
       </div>
-      <button type="submit" class="submit-btn">Continue</button>
-    </form>
-    <span class="signup-btn" onclick="switchForms()">New here? <p>Create an account</p></span>
-    <a href="#">Forgot your password?</a>
-  </div>
-  <div class="signup hidden" id="signup">
-    <h1>Sign up</h1>
-    <form action="/register" method="post" class="form">
-      <div class="fieldset">
-        <label for="name">Name</label>
-        <input type="text" maxlength="50" name="name" id="name" required>
+      <div class="signup hidden" id="signup">
+        <h1>Sign up</h1>
+        <form action="/register" method="post" class="form">
+          <div class="fieldset">
+            <label for="name">Name</label>
+            <input type="text" maxlength="50" name="name" id="name" required>
+          </div>
+          <div class="fieldset">
+            <label for="edv-s">EDV</label>
+            <input
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              type="number" maxlength="10" name="edv" id="edv-s" required>
+          </div>
+          <div class="fieldset">
+            <label for="password-s">Password</label>
+            <input type="password" maxlength="50" name="password" id="password-s" required>
+          </div>
+          <div class="fieldset">
+            <select name="sector" id="sector" required>
+              <option value="" disabled selected>Select the sector</option>
+              <% for (let i=0; i<sectors.length; i++) { %>
+                <option value="<%= sectors[i].IDSector %>">
+                  <%= sectors[i].Name %>
+                </option>
+                <% } %>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Continue</button>
+        </form>
+        <span class="signup-btn" onclick="switchForms()">Back to login</span>
       </div>
-      <div class="fieldset">
-        <label for="edv-s">EDV</label>
-        <input 
-        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-        type = "number" maxlength = "10" name="edv" id="edv-s" required>
+      <div class="picture">
+        <img src="img/bosch.png" alt="">
       </div>
-      <div class="fieldset">
-        <label for="password-s">Password</label>
-        <input type="password" maxlength="50" name="password" id="password-s" required>
-      </div>
-      <div class="fieldset">
-        <select name="sector" id="sector" required>
-          <option value="" disabled selected>Select the sector</option>
-          <% for (let i=0; i<sectors.length; i++) { %>            
-            <option value="<%= sectors[i].IDSector %>"><%= sectors[i].Name %></option>
-          <% } %> 
-        </select>
-      </div>
-      <button type="submit" class="submit-btn">Continue</button>
-    </form>
-    <span class="signup-btn" onclick="switchForms()">Back to login</span>
-  </div>
-  <div class="picture">
-    <img src="img/bosch.png" alt="">
-  </div>
-</section> 
-<script src="js/login.js"></script>
-</body>
-</html>
+    </section>
+    <script src="js/login.js"></script>
+<%- include("parts/footer.ejs") %>

@@ -11,6 +11,12 @@
   color: var(--white);
 }
 
+.header-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login {
   height: 100%;
   width: 50%;
