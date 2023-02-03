@@ -257,6 +257,7 @@ main {
   overflow-y: scroll;
   padding: 12px;
   text-align: justify;
+  word-wrap: break-word;
 }
 
 *::-webkit-scrollbar {
@@ -449,6 +450,7 @@ textarea:hover {
 .comment-content {
   margin-top: 10px;
   height: fit-content;
+  word-wrap: break-word;
 }
 
 .img-btn {
