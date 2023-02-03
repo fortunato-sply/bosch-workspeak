@@ -7,7 +7,13 @@ const changeIcon = (bool) => {
     upicon.classList.replace('ph-arrow-up', 'ph-caret-up');
 }
 
-const body = document.getElementById('head');
-document.addEventListener('scroll', () => {
-  console.log(body.scrollTop());
-})
+const toggleButton = () => {
+  if (document.documentElement.scrollTop > 400) {
+    btn.style.display = 'flex';
+    btn.classList.add('animate__fadeInUp');
+  } else {
+    btn.style.display = 'none';
+    btn.classList.remove('animate__fadeInUp');
+  }
+}
+document.addEventListener('scroll', toggleButton)

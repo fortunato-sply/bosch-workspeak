@@ -1,5 +1,6 @@
 <%- include("parts/header.ejs") %>
   <link rel="stylesheet" href="css/postModal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css" />
   <title>WorkSpeak | HomePage</title>
   </head>
 
@@ -28,7 +29,7 @@
                 <%= " img/user.png" %>
               <% } else{ %>
                 <%= "img/" +getUser.Picture %>
-              <% } %>" alt="">
+                  <% } %>" alt="">
             </button>
           </form>
         </div>
@@ -39,7 +40,7 @@
           <p>
             <% if(getUser.Role !=null){ %>
               <%= getUser.Role %>
-            <% } %>
+                <% } %>
           </p>
         </div>
         <div class="afterline" style="width: 10%; margin-top: 10px; height: 1px;"></div>
@@ -56,19 +57,19 @@
                   <form class="user" action="/userProfile/<%= posts[i]['User.IDUser'] %>" method="post">
                     <button type="submit" class="user-btn">
                       <img src=<% if(posts[i]['User.Picture']===null){ %>
-                        <%= "img/user.png" %>
-                      <% } else{ %>
-                        <%= "img/" + posts[i]['User.Picture'] %>
-                      <% } %> alt="">
-                      <div class="name">
-                        <strong class="nm">
-                          <%= posts[i]['User.Name'] %>
-                        </strong>
-                        <p>
-                          <%= posts[i]['User.Role'] %> @
-                          <%= posts[i]['Sector.Name'] %>
-                        </p>
-                      </div>
+                      <%= "img/user.png" %>
+                        <% } else{ %>
+                          <%= "img/" + posts[i]['User.Picture'] %>
+                            <% } %> alt="">
+                              <div class="name">
+                                <strong class="nm">
+                                  <%= posts[i]['User.Name'] %>
+                                </strong>
+                                <p>
+                                  <%= posts[i]['User.Role'] %> @
+                                    <%= posts[i]['Sector.Name'] %>
+                                </p>
+                              </div>
                     </button>
                   </form>
                 </div>
@@ -88,7 +89,7 @@
                         </form>
                       </div>
                     </div>
-                  <% } %>
+                    <% } %>
                 </div>
               </div>
               <div class="content">
@@ -113,44 +114,45 @@
                       <span class="afterline cc"></span>
                       <p>Comments</p>
                       <% show=true; %>
-                    <% } %>
-                    <div class="comment">
-                      <div class="top">
-                        <form class="info-user" action="/userProfile/<%= comments[x]['User.IDUser'] %>" method="post">
-                          <button type="submit" class="user-btn">
-                            <img src=<% if(comments[x]['User.Picture']===null){ %>
-                              <%= "img/user.png" %>
-                            <% } else{ %>
-                              <%= "img/" + comments[x]['User.Picture'] %>
-                            <% } %> alt="">
-                            <div class="name">
-                              <strong style="font-size: 1rem;">
-                                <%= comments[x]['User.Name'] %>
-                              </strong>
-                              <p>
-                                <%= comments[x]['User.Role'] %> @ <%= comments[x]['Sector.Name'] %>
-                              </p>
-                            </div>
-                          </button>
-                        </form>
-                        <% if (getUser.IDUser == comments[x]['User.IDUser']) { %>
-                          <form action="/deleteComment/<%= comments[x].IDComment %>" method="post">
-                            <button type="submit" style="border: 0; background-color: transparent;">
-                              <i class="ph-trash delbtn"></i>
-                            </button>
-                          </form>
                         <% } %>
-                      </div>
-                      <div class="comment-content">
-                        <%= comments[x].Content %>
-                      </div>
-                    </div>
-                  <% } %>
-                <% } %>
+                          <div class="comment">
+                            <div class="top">
+                              <form class="info-user" action="/userProfile/<%= comments[x]['User.IDUser'] %>"
+                                method="post">
+                                <button type="submit" class="user-btn">
+                                  <img src=<% if(comments[x]['User.Picture']===null){ %>
+                                  <%= "img/user.png" %>
+                                    <% } else{ %>
+                                      <%= "img/" + comments[x]['User.Picture'] %>
+                                        <% } %> alt="">
+                                          <div class="name">
+                                            <strong style="font-size: 1rem;">
+                                              <%= comments[x]['User.Name'] %>
+                                            </strong>
+                                            <p>
+                                              <%= comments[x]['User.Role'] %> @ <%= comments[x]['Sector.Name'] %>
+                                            </p>
+                                          </div>
+                                </button>
+                              </form>
+                              <% if (getUser.IDUser==comments[x]['User.IDUser']) { %>
+                                <form action="/deleteComment/<%= comments[x].IDComment %>" method="post">
+                                  <button type="submit" style="border: 0; background-color: transparent;">
+                                    <i class="ph-trash delbtn"></i>
+                                  </button>
+                                </form>
+                                <% } %>
+                            </div>
+                            <div class="comment-content">
+                              <%= comments[x].Content %>
+                            </div>
+                          </div>
+                          <% } %>
+                            <% } %>
               </div>
             </div>
-          <% } %>
-        <% } %>
+            <% } %>
+              <% } %>
       </section>
     </main>
     <button type="submit" class="new-post-btn" onclick="openPostModal()"><i class="ph-plus"></i></button>
@@ -183,7 +185,7 @@
     </div>
     <a href="#head" class="up-btn" id="up-btn" onmouseenter="changeIcon(true)" onmouseleave="changeIcon(false)">
       <i id="up-icon" class="ph-caret-up up-icon"></i>
-    </div>
+    </a>
     <script src="js/upbtn.js"></script>
     <script src="js/postModal.js"></script>
     <script src="js/textSize.js"></script>
