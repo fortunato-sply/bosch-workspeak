@@ -9,6 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: .5s;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
 .img-container {
@@ -200,13 +201,14 @@ input[type='file']{
   position: fixed;
   width: 40vw;
   height: 40vh;
-  background-color: var(--gray-800);
+  background-color: var(--gray-700);
   border-radius: 12px;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   justify-content: center;
   align-items: center;
   animation: slide .8s;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 @keyframes slide {

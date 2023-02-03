@@ -10,6 +10,7 @@ const switchColorTheme = () => {
     document.documentElement.style.setProperty('--gray-700', '#fff');
     document.documentElement.style.setProperty('--gray-300', '#121214');
     document.documentElement.style.setProperty('--white', '#111');
+    document.documentElement.style.setProperty('--backimg', '#202024');
     localStorage.setItem("value", true);
   }
   else {
@@ -19,6 +20,7 @@ const switchColorTheme = () => {
     document.documentElement.style.setProperty('--gray-700', '#29292e');
     document.documentElement.style.setProperty('--gray-300', '#c4c4cc');
     document.documentElement.style.setProperty('--white', '#fff');
+    document.documentElement.style.setProperty('--backimg', '#e1e1e6');
     localStorage.setItem("value", false);
   }
 }
@@ -31,6 +33,7 @@ const setColorTheme = () => {
     document.documentElement.style.setProperty('--gray-700', '#fff');
     document.documentElement.style.setProperty('--gray-300', '#121214');
     document.documentElement.style.setProperty('--white', '#111');
+    document.documentElement.style.setProperty('--backimg', '#202024');
   }
   else {
     icon.classList.replace('ph-moon', 'ph-sun');
@@ -39,5 +42,6 @@ const setColorTheme = () => {
     document.documentElement.style.setProperty('--gray-700', '#29292e');
     document.documentElement.style.setProperty('--gray-300', '#c4c4cc');
     document.documentElement.style.setProperty('--white', '#fff');
+    document.documentElement.style.setProperty('--backimg', '#e1e1e6');
   }
 }
