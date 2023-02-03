@@ -3,7 +3,7 @@
   <title>WorkSpeak | HomePage</title>
   </head>
 
-  <body onload="setColorTheme()">
+  <body id='body' onload="setColorTheme()">
     <header id="head">
       <div class="header-box">
         <button class="lightmode-btn" onclick="switchColorTheme()">
@@ -181,9 +181,10 @@
         <button type="submit" class="submit-btn" style="width: 40%; margin-top: 20px;">Publish</button>
       </form>
     </div>
-    <a href="#head">
-      x
+    <a href="#head" class="up-btn" id="up-btn" onmouseenter="changeIcon(true)" onmouseleave="changeIcon(false)">
+      <i id="up-icon" class="ph-caret-up up-icon"></i>
     </div>
+    <script src="js/upbtn.js"></script>
     <script src="js/postModal.js"></script>
     <script src="js/textSize.js"></script>
     <%- include("parts/footer.ejs") %>

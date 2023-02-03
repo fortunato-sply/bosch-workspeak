@@ -367,7 +367,7 @@ textarea:hover {
   margin: 12px;
   bottom: 2vh;
   right: 19.6vw;
-  color: var(--white);
+  color: #fff;
   font-size: 1.9rem;
   text-align: center;
   background-color: var(--red-600);
@@ -656,4 +656,27 @@ textarea:hover {
 
 .delbtn:hover {
   color: var(--red-600);
+}
+
+.up-btn {
+  width: 50px; height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 2em;
+  text-decoration: none;
+  padding: 8px;
+  background-color: var(--red-600);
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 99px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.up-btn:hover .up-icon{
+  transform: translateY(-70%);
+}
+
+.up-icon {
+  transition: .5s;
 }
