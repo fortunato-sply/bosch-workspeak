@@ -19,6 +19,10 @@
   --backimg: #e1e1e6;
 }
 
+::selection {
+  background-color: var(--gray-900);
+}
+
 #password, #password-s{
   padding-right: 48px;
 }
@@ -257,6 +261,7 @@ main {
   overflow-y: scroll;
   padding: 12px;
   text-align: justify;
+  word-wrap: break-word;
 }
 
 *::-webkit-scrollbar {
@@ -449,6 +454,7 @@ textarea:hover {
 .comment-content {
   margin-top: 10px;
   height: fit-content;
+  word-wrap: break-word;
 }
 
 .img-btn {
@@ -519,14 +525,18 @@ textarea:hover {
   opacity: 0.5;
 }
 
-.ph-eye, .ph-eye-slash{
+.fieldset div .ph-eye, .fieldset div .ph-eye-slash{
   position: absolute;
   font-size: 1.5rem;
   font-weight: 400;
   opacity: 0.5;
   cursor: pointer;
   width: fit-content;
-  right: calc(50% + 150px);
+  right: 11vw;
+}
+
+.olhin {
+  right: 44vw!important;
 }
 
 .fieldset div {

@@ -1,0 +1,82 @@
+@media screen and (max-width: 1350px) {
+  .profile-container {
+    padding: 0 0 12px 0;
+    height: 80%;
+  }
+
+  .background {
+    border-radius: 8px 8px 0 0;
+    height: 80px;
+  }
+  
+  .background img {
+    margin-top: 30px;
+    width: 90px;
+    height: 90px;
+  }
+
+  .content-box span {
+    position: relative;
+    left: 87%;
+    bottom: 30%;
+    font-size: 0.875rem;
+  }
+
+  .new-post-btn {
+    bottom: 0.5vh;
+    right: 19.1vw;
+  }
+
+  /* post-modal */
+  .post-modal {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw!important;
+    height: 70vh!important;
+  }
+
+  /* edit-profile */
+  .editprofile-container {
+    width: 80vw!important;
+    height: 75vh!important;
+    border-radius: 12px;
+  }
+
+  .fieldset input {
+    max-width: 20vw;
+  }
+
+  .fieldset textarea {
+    width: 50vw!important;
+  }
+
+  #profile-name {
+    margin-top: -55px!important;
+  }
+
+  #x {
+  white-space: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  }
+
+  /* login */
+  .login-box{
+    width: 70vw!important;
+    height: 85vh!important;
+  }
+
+  .login {
+    padding: 24px 48px!important;
+    gap: 40px!important;
+    align-items: center;
+    animation: test .8s;
+  }
+
+  .fieldset input {
+    width: 20vw!important;
+    font-size: 1.125rem!important;
+  }
+}
