@@ -57,19 +57,19 @@
                   <form class="user" action="/userProfile/<%= posts[i]['User.IDUser'] %>" method="post">
                     <button type="submit" class="user-btn">
                       <img src=<% if(posts[i]['User.Picture']===null){ %>
-                      <%= "img/user.png" %>
-                        <% } else{ %>
-                          <%= "img/" + posts[i]['User.Picture'] %>
-                            <% } %> alt="">
-                              <div class="name">
-                                <strong class="nm">
-                                  <%= posts[i]['User.Name'] %>
-                                </strong>
-                                <p>
-                                  <%= posts[i]['User.Role'] %> @
-                                    <%= posts[i]['Sector.Name'] %>
-                                </p>
-                              </div>
+                        <%= "img/user.png" %>
+                      <% } else{ %>
+                        <%= "img/" + posts[i]['User.Picture'] %>
+                      <% } %> alt="">
+                      <div class="name">
+                        <strong class="nm">
+                          <%= posts[i]['User.Name'] %>
+                        </strong>
+                        <p>
+                          <%= posts[i]['User.Role'] %> @
+                          <%= posts[i]['Sector.Name'] %>
+                        </p>
+                      </div>
                     </button>
                   </form>
                 </div>

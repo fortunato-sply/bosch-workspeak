@@ -8,10 +8,10 @@
       <button class="lightmode-btn" onclick="switchColorTheme()">
         <i id="mode-icon" class="ph-sun"></i>
       </button>
-      <a href="home">
-        <img src="img/bosch.png" alt="BOSCH">
+      <a href="/home">
+        <img src="/img/bosch.png" alt="BOSCH">
       </a>
-      <form action="logout" method="get" class="signout">
+      <form action="/logout" method="get" class="signout">
         <button type="submit" class="signout-btn"><i class="ph-sign-out"></i></button>
       </form>
     </div>
@@ -41,11 +41,7 @@
           </div>
           <div class="fieldset">
             <p>Role</p>
-            <input type="text" name="role" id="role" maxlength="20" required value=<% if(getUser.Role === null){ %>
-              <%= "Default" %>
-            <% } else{ %>
-              <%= getUser.Role %>
-            <% } %>>
+            <input type="text" name="role" id="role" maxlength="20" required value=<%= getUser.Role %>>
           </div>
           <div class="fieldset">
             <p>Sector</p>
