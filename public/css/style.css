@@ -525,18 +525,14 @@ textarea:hover {
   opacity: 0.5;
 }
 
-.fieldset div .ph-eye, .fieldset div .ph-eye-slash{
+.ph-eye, .ph-eye-slash{
   position: absolute;
   font-size: 1.5rem;
   font-weight: 400;
   opacity: 0.5;
   cursor: pointer;
   width: fit-content;
-  right: 11vw;
-}
-
-.olhin {
-  right: 44vw!important;
+  right: calc(50% + 150px);
 }
 
 .fieldset div {

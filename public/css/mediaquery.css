@@ -79,4 +79,12 @@
     width: 20vw!important;
     font-size: 1.125rem!important;
   }
+
+  .olhin {
+    right: 44vw!important;
+  }
+
+  .fieldset div .ph-eye, .fieldset div .ph-eye-slash{
+    right: 11vw;
+  }
 }
